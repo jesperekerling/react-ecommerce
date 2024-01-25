@@ -25,7 +25,7 @@ function ProductDetails() {
     { loading && <p>Loading..</p>}
     {
         product && (
-            <div className="details mt-14 container mx-auto text-left">
+            <div className="details mt-14 container mx-auto text-left" key={product._id}>
               <h1 className='font-bold text-center pb-7'>
                 { product?.name}</h1>
               <div className='flex flex-row gap-10'>
@@ -39,7 +39,7 @@ function ProductDetails() {
                         if(index === 0) return null
                         return (
                         <div className=''>
-                          <img src={image} alt={product.images} />
+                          <img src={image} alt={product.images} className='hover:opacity-50' />
                         </div>
                       )})
                     }

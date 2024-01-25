@@ -50,7 +50,7 @@ function CheckOut() {
           <div className='font-semibold text-xl'>2369 kr</div>
         </section>
         <section className='pb-10'>
-          <button className='w-full bg-blue-700 my-5 py-4 text-white'>
+          <button className='w-full bg-blue-700 my-5 py-4 text-white hover:bg-blue-800'>
             Continue to Check Out
           </button>
         </section>
