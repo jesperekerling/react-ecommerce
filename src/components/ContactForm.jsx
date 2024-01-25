@@ -1,39 +1,90 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useFormik } from "formik";
+import { FormInput } from "../components/FormInput"
+import { IoIosWarning } from "react-icons/io";
+import { RegisterFormSchema } from "../assets/js/Schemas";
 
-function ContactForm() {
- return (
-   <div className="App">
-     <center>
-       <h1>Register a new account</h1>
-       <Formik>
-         {({ isSubmitting }) => (
-           <Form>
-             <Field
-               type="text"
-               name="fullname"
-               placeholder="Enter your fullname"
-             />
-             <ErrorMessage name="fullname" component="div" />
 
-             <Field
-               type="email"
-               name="email"
-               placeholder="Enter email address"
-             />
-             <ErrorMessage name="email" component="div" />
+export const ContactForm = () => {
 
-             <Field type="password" name="password" />
-             <ErrorMessage name="password" component="div" />
+  const form = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    },
+    validationSchema: RegisterFormSchema,
+    onSubmit: (values) => {
+      console.log(values)
+    }
+  })
 
-             <button type="submit" disabled={isSubmitting}>
-               Submit
-             </button>
-           </Form>
-         )}
-       </Formik>
-     </center>
-   </div>
- );
+  console.log(form)
+
+  return (
+    <form onSubmit={form.handleSubmit} className="reg-form" noValidate>
+      <FormInput
+        label="First Name"
+        id="firstName"
+        name="firstName"
+        type="text"
+        value={form.values.firstName}
+        onChange={form.handleChange}
+        errorMsg={form.errors.firstName && form.touched.firstName && form.errors.firstName}
+        onBlur={form.handleBlur}
+      />
+      <FormInput
+        label="Last Name"
+        id="lastName"
+        name="lastName"
+        type="text"
+        value={form.values.lastName}
+        onChange={form.handleChange}
+        errorMsg={form.errors.lastName && form.touched.lastName && form.errors.lastName}
+        onBlur={form.handleBlur}
+      />
+      <FormInput
+        label="Email"
+        id="email"
+        name="email"
+        type="email"
+        value={form.values.email}
+        onChange={form.handleChange}
+        errorMsg={form.errors.email && form.touched.email && form.errors.email}
+        onBlur={form.handleBlur}
+      />
+      <FormInput
+        label="Password"
+        id="password"
+        name="password"
+        type="password"
+        value={form.values.password}
+        onChange={form.handleChange}
+        errorMsg={form.errors.password && form.touched.password && form.errors.password}
+        onBlur={form.handleBlur}
+      />
+      <FormInput
+        label="Confirm Password"
+        id="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        value={form.values.confirmPassword}
+        onChange={form.handleChange}
+        errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
+        onBlur={form.handleBlur}
+      />
+      
+      {/* { errors.main && 
+      <div className="main-error">
+        <p>{ errors.main }</p>
+        <IoIosWarning />
+      </div>} */}
+
+      <button type="submit" className="btn btn-primary">Register</button>
+      {/* <p>{JSON.stringify(formData)}</p> */}
+    </form>
+  )
 }
-export default ContactForm;
+
+export default ContactForm
