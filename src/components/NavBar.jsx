@@ -10,7 +10,7 @@ function NavBar() {
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <NavLink to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
             <img src='/src/assets/icons/computer.gif' alt='Flowbite Logo' width='50' height='50' />
-            <span className='self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white'>
+            <span className='self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white hover:opacity-50'>
               Tech Shop</span>
         </NavLink>
 
