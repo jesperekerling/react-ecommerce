@@ -22,7 +22,7 @@ export const RegisterFormSchema = Yup.object({
 
   confirmPassword: Yup.string()
     .required('You need to confirm your password')
-    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .oneOf([Yup.ref('password'), null], 'Passwords must match'),
 
   message: Yup.string()
     .required('You need to enter a longer message.')
