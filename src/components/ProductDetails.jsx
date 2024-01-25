@@ -25,13 +25,13 @@ function ProductDetails() {
     { loading && <p>Loading..</p>}
     {
         product && (
-            <div className="details mt-14 container mx-auto text-left" key={product._id}>
+            <div className="details mt-14 container mx-auto text-left">
               <h1 className='font-bold text-center pb-7'>
                 { product?.name}</h1>
               <div className='flex flex-row gap-10'>
                 <div className='basis-2/3'>
                   <div className="w-full">
-                      <img src={product.images[0]} alt={product.images} />
+                      <img src={product.images[0]} alt={product.images} key={product._id} />
                   </div>
                   <div className="grid grid-cols-3 gap-4 mt-5">
                     { // Shows available images from API
