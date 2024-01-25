@@ -8,7 +8,6 @@ import NotFound from './app/public/NotFound'
 import Categories from './app/public/Categories'
 import BrowseProducts from './app/public/BrowseProducts'
 import CheckOut from './app/public/CheckOut'
-import ContactForm from './app/public/ContactForm'
 
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
