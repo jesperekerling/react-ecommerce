@@ -18,9 +18,9 @@ import ShowCategory from './components/ShowCategory'
 
 
 
+
 function App() {
-  const [cart, setCart] = useState([])
-  const [cartCount, setCartCount] = useState(0)
+
 
 
   return (

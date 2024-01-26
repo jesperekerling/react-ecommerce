@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Categories from '../app/public/Categories'
+import { useDispatch } from 'react-redux'
+import { addToCart } from "../store/features/shoppingCart/shoppingCartSlice";
+import { useCart } from "../contexts/cartContext";
+
 
 function ProductDetails() {
 
