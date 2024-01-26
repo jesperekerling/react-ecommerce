@@ -1,8 +1,4 @@
 import { useState, useEffect, useContext } from 'react'
-import { CartContext } from '../context/cart.jsx'
-import Cart from './Cart.jsx'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom"
 
 

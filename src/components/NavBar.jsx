@@ -1,7 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Dropdown } from "./Dropdown";
+import { useSelector } from "react-redux";
+import { useCart } from "../contexts/cartContext";
 
 function NavBar() {
+
+
+  
   return (
 
     <header className='w-full mb-44'>
@@ -26,6 +32,7 @@ function NavBar() {
                   <path stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 1h15M1 7h15M1 13h15'/>
               </svg>
           </button>
+
           <NavLink to='/checkout'>
           <button type="button" class="relative inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
           <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

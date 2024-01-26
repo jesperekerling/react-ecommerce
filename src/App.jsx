@@ -9,6 +9,7 @@ import Categories from './app/public/Categories'
 import BrowseProducts from './app/public/BrowseProducts'
 import CheckOut from './app/public/CheckOut'
 
+
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import ProductDetails from './components/ProductDetails'
