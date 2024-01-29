@@ -2,7 +2,7 @@ import React from 'react'
 import ProductList from '../../components/ProductList'
 import Categories from './Categories'
 
-function Home() {
+function HomePage() {
   return (
     <div>
         <h1 className='m-10 text-3xl'>Hey Customer!</h1>
@@ -37,4 +37,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage

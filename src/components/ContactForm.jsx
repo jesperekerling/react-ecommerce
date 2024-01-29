@@ -56,7 +56,7 @@ export const ContactForm = () => {
         onBlur={form.handleBlur}
       />
       <div className="form-group text-left p-3">
-        <label for="message" className="block py-3">Message</label>
+        <label for="message" className="block py-3 font-semibold">Message</label>
         <textarea
           id="message"
           name="message"
@@ -65,6 +65,7 @@ export const ContactForm = () => {
           onChange={form.handleChange}
           errorMsg={form.errors.message && form.touched.message && form.errors.message}
           onBlur={form.handleBlur}
+          className="w-full"
         >
         </textarea>
       </div>

@@ -6,7 +6,7 @@ function RootLayout() {
   return (
     <Providers>
       <div className="bg-slate-700 min-h-screen">
-        <Navbar />
+        <NavBar />
         <div className="container m-auto">
           <Outlet />
         </div>

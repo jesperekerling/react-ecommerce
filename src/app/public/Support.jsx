@@ -10,7 +10,7 @@ function Support() {
           Customer Support
         </h2>
 
-        <p>
+        <p className='mb-10'>
           Contact if you have any issues. We are happy to help you.
         </p>
         

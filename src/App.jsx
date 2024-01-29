@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
-import Home from './app/public/Home'
+import HomePage from './app/public/HomePage'
 import Support from './app/public/Support'
 import NotFound from './app/public/NotFound'
 import Categories from './app/public/Categories'
@@ -29,7 +29,7 @@ function App() {
         <NavBar />
         <main>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<HomePage />} />
             <Route path='/checkout' element={<CheckOut />} />
             <Route path='/products' element={<BrowseProducts />} />
             <Route path='/support' element={<Support />} />
