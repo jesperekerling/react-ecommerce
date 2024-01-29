@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { FormInput } from "../components/FormInput"
+import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { RegisterFormSchema } from "../assets/js/Schemas";
 
@@ -9,8 +9,10 @@ export const ContactForm = () => {
   const form = useFormik({
     initialValues: {
       firstName: '',
-      message: '',
+      lastName: '',
       email: '',
+      password: '',
+      confirmPassword: ''
     },
     validationSchema: RegisterFormSchema,
     onSubmit: (values) => {
@@ -23,8 +25,7 @@ export const ContactForm = () => {
         },
         body: JSON.stringify({
           firstName: 'values.name',
-          email: 'values.email',
-          message: 'values.message',
+          secondParam: 'yourOtherValue',
         })
       })
     }
@@ -43,7 +44,16 @@ export const ContactForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.firstName && form.touched.firstName && form.errors.firstName}
         onBlur={form.handleBlur}
-        className={"input-group"}
+      />
+      <FormInput
+        label="Last Name"
+        id="lastName"
+        name="lastName"
+        type="text"
+        value={form.values.lastName}
+        onChange={form.handleChange}
+        errorMsg={form.errors.lastName && form.touched.lastName && form.errors.lastName}
+        onBlur={form.handleBlur}
       />
       <FormInput
         label="Email"
@@ -55,29 +65,34 @@ export const ContactForm = () => {
         errorMsg={form.errors.email && form.touched.email && form.errors.email}
         onBlur={form.handleBlur}
       />
-      <div className="form-group text-left p-3">
-        <label for="message" className="block py-3">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write message here.."
-          value={form.values.message}
-          onChange={form.handleChange}
-          errorMsg={form.errors.message && form.touched.message && form.errors.message}
-          onBlur={form.handleBlur}
-        >
-        </textarea>
-      </div>
-
+      <FormInput
+        label="Password"
+        id="password"
+        name="password"
+        type="password"
+        value={form.values.password}
+        onChange={form.handleChange}
+        errorMsg={form.errors.password && form.touched.password && form.errors.password}
+        onBlur={form.handleBlur}
+      />
+      <FormInput
+        label="Confirm Password"
+        id="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        value={form.values.confirmPassword}
+        onChange={form.handleChange}
+        errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
+        onBlur={form.handleBlur}
+      />
+      
       {/* { errors.main && 
       <div className="main-error">
         <p>{ errors.main }</p>
         <IoIosWarning />
       </div>} */}
 
-      <button type="submit" className="text-center mt-10 bg-blue-800 text-white">
-        Send Message
-      </button>
+      <button type="submit" className="btn btn-primary">Register</button>
       {/* <p>{JSON.stringify(formData)}</p> */}
     </form>
   )

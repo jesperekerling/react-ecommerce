@@ -6,7 +6,7 @@ import { useCart } from "../contexts/cartContext";
 
 function NavBar() {
 
-
+  //const { totalQuantity } = useCart()
   
   return (
 

@@ -26,5 +26,5 @@ export const RegisterFormSchema = Yup.object({
 
   message: Yup.string()
     .required('You need to enter a longer message.')
-    .min(25, 'Your need to write at least 25 chars'),
+    .min(15, 'Your need to write at least 25 chars'),
 })

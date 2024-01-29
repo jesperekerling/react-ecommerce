@@ -20,6 +20,18 @@
 }
 
 
+.reg-form .textarea textarea {
+  height: 200px;
+}
+.form-group {
+  width: 100%;
+}
+.form-label {
+  display: block;
+  text-align: left;
+}
+
+
 
 body {
   margin: 0;
