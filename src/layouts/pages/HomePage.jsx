@@ -20,13 +20,13 @@ function HomePage() {
   )
 
   return (
-    <div className="mt-10">
+    <div className="container mx-auto bg-green-100 mt-10">
       {
         loading 
         ? <ProductList.Skeleton />
         : <ProductList products={products} />
       }
-      
+
       <h2 className='text-2xl text-blue-500 mt-10'>
       To do:
       </h2>

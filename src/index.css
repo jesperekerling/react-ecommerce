@@ -19,7 +19,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
 .reg-form .textarea textarea {
   height: 400px;
 }

@@ -35,11 +35,15 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
           { isCheckoutPage
             ? (
               <>
-                <button onClick={clearCart} className="bg-yellow-600 text-white py-1.5 px-6 rounded-lg hover:bg-yellow-700 transition-colors mr-4">Clear Cart</button>
+                <button onClick={clearCart} className="bg-yellow-600 text-white py-1.5 px-6 rounded-lg hover:bg-yellow-700 transition-colors mr-4">
+                  Clear Cart
+                </button>
                 <button className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">Place order</button>
               </>
             )
-            : <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">Checkout</Link>
+            : <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
+              Checkout
+              </Link>
           }
           
         </div>

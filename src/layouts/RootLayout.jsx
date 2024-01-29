@@ -6,8 +6,10 @@ function RootLayout() {
   return (
     <Providers>
         <Navbar />
-        <main className="container mx-auto text-center">
+        <main>
+          
           <Outlet />
+          
         </main> 
     </Providers>
   )
