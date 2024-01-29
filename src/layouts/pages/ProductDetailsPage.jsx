@@ -4,7 +4,7 @@ import axios from 'axios'
 import { BiSolidCartAdd } from "react-icons/bi";
 import { useDispatch } from 'react-redux'
 import { addToCart } from "../../store/features/shoppingCart/shoppingCartSlice";
-import { useCart } from "../../components/ShoppingCart";
+import { useCart } from "../../contexts/cartContext";
 
 
 function ProductDetailsPage() {

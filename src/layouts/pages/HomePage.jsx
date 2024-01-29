@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from "../../store/features/shoppingCart/shoppingCartSlice"
+import { getProducts } from "../../store/features/products/productsSlice"
 import { ProductList } from "../../components/ProductList"
 
 function HomePage() {
