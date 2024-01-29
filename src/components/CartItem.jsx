@@ -34,10 +34,21 @@ export const CartItem = ({ item }) => {
       </div>
       <div className="flex gap-3">
         <div>
-          <button onClick={removeOneFromCart} className="bg-slate-800 text-white px-2 py-3 rounded-s-md hover:bg-slate-900 transition-colors border-r border-r-slate-600"><FaMinus className="w-3 h-3" /></button>
-          <button onClick={addOneToCart} className="bg-slate-800 text-white px-2 py-3 rounded-e-md hover:bg-slate-900 transition-colors"><FaPlus className="w-3 h-3" /></button>
+          <button onClick={removeOneFromCart} className="bg-slate-800 text-white px-2 py-3 rounded-s-md hover:bg-slate-900 transition-colors border-r border-r-slate-600">
+            <svg class="w-5 h-5 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/>
+            </svg>
+          </button>
+          <button onClick={addOneToCart} className="bg-slate-800 text-white px-2 py-3 rounded-e-md hover:bg-slate-900 transition-colors">
+            <svg class="w-5 h-5 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
+            </svg>
+            </button>
         </div>
-        <button onClick={deleteProduct} className="p-1 group"><p className="text-red-700 group-hover:text-red-800 transition-colors w-5 h-5">hej</p></button>
+        <button onClick={deleteProduct} className="p-1 group">
+          <p className="text-red-700 group-hover:text-red-800 transition-colors w-5 h-5">
+            Clear cart</p>
+        </button>
       </div>
     </div>
   )

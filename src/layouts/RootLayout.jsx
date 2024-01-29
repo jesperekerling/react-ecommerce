@@ -5,12 +5,10 @@ import Providers from "../components/Providers"
 function RootLayout() {
   return (
     <Providers>
-      <div className="bg-slate-700 min-h-screen">
         <Navbar />
-        <div className="container m-auto">
+        <main className="container mx-auto text-center">
           <Outlet />
-        </div>
-      </div>
+        </main> 
     </Providers>
   )
 }

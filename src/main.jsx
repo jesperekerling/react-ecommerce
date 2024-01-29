@@ -6,6 +6,7 @@ import RootLayout from './layouts/RootLayout.jsx'
 import HomePage from './layouts/pages/HomePage.jsx'
 import ProductDetailsPage from './layouts/pages/ProductDetailsPage.jsx'
 import CheckoutPage from './layouts/pages/CheckoutPage.jsx'
+import BrowseProducts from './app/public/BrowseProducts.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "details/:productId", element: <ProductDetailsPage /> },
-      { path: 'checkout', element: <CheckoutPage />}
+      { path: 'checkout', element: <CheckoutPage />},
+      { path: 'products', element: <BrowseProducts />}
     ]
   }
 ])
