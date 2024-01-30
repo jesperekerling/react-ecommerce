@@ -10,7 +10,7 @@ export const Dropdown = ({ children }) => {
     { isOpen && <DropdownBg setIsOpen={setIsOpen} />}
     <div className="relative inline-block text-left">
       <div>
-        <button onClick={() => setIsOpen(state => !state)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-sm font-semibold " id="menu-button" aria-expanded="true" aria-haspopup="true">
+        <button onClick={() => setIsOpen(state => !state)} type="button" className="w-full justify-center relative inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ml-2" id="menu-button" aria-expanded="true" aria-haspopup="true">
           {children}
         </button>
       </div>
@@ -22,8 +22,7 @@ export const Dropdown = ({ children }) => {
           </div>
         </div>
       )}
-
-
+      
     </div>
   </>
   )

@@ -56,7 +56,7 @@ export const ContactForm = () => {
         onBlur={form.handleBlur}
       />
       <div className="form-group text-left p-3">
-        <label for="message" className="block py-3 font-semibold">Message</label>
+        <label htmlFor="message" className="block py-3 font-semibold">Message</label>
         <textarea
           id="message"
           name="message"

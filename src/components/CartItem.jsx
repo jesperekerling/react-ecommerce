@@ -27,28 +27,28 @@ export const CartItem = ({ item }) => {
     <div className="flex justify-between items-center p-2 border-b last-of-type:border-b-0">
       <div className="flex items-center">
         <img src={item.product.images[0]} alt="product-image" className="w-[100px]" />
-        <div>
-          <p className="font-semibold truncate">{item.product.name}</p>
+        <div className="p-3 text-xs">
+          <p className="font-semibold text-ellipis">{item.product.name}</p>
           <p className="text-sm">{item.quantity} x {item.product.price}</p>
         </div>
       </div>
-      <div className="flex gap-3">
-        <div>
-          <button onClick={removeOneFromCart} className="bg-slate-800 text-white px-2 py-3 rounded-s-md hover:bg-slate-900 transition-colors border-r border-r-slate-600">
+      <div className="flex">
+          <button onClick={removeOneFromCart} className="bg-slate-800 text-white p-2 mr-1 rounded-s-md hover:bg-slate-900 transition-colors border-r border-r-slate-600 flex">
             <svg class="w-5 h-5 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"/>
             </svg>
           </button>
-          <button onClick={addOneToCart} className="bg-slate-800 text-white px-2 py-3 rounded-e-md hover:bg-slate-900 transition-colors">
+          <button onClick={addOneToCart} className="bg-slate-800 text-white p-2 mr-1 rounded-e-md hover:bg-slate-900 transition-colors flex">
             <svg class="w-5 h-5 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
             </svg>
             </button>
-        </div>
-        <button onClick={deleteProduct} className="p-1 group">
-          <p className="text-red-700 group-hover:text-red-800 transition-colors w-5 h-5">
-            Clear cart</p>
+            <button onClick={deleteProduct} className="p-2 group flex">
+          <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+          </svg>
         </button>
+
       </div>
     </div>
   )

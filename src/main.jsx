@@ -8,6 +8,7 @@ import ProductDetailsPage from './layouts/pages/ProductDetailsPage.jsx'
 import CheckoutPage from './layouts/pages/CheckoutPage.jsx'
 import NotFound from './app/public/NotFound.jsx'
 import Categories from './app/public/Categories.jsx'
+import Support from './app/public/Support.jsx'
 import ShowCategory from './components/ShowCategory.jsx'
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "products/:productId", element: <ProductDetailsPage /> },
       { path: 'checkout', element: <CheckoutPage />},
       { path: 'categories', element: <Categories />},
+      { path: 'support', element: <Support />},
       { path: 'categories/:category', element: <ShowCategory />},     
       { path: '*', element: <NotFound />}
      

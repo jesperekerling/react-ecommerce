@@ -35,8 +35,8 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
           { isCheckoutPage
             ? (
               <>
-                <button onClick={clearCart} className="bg-yellow-600 text-white py-1.5 px-6 rounded-lg hover:bg-yellow-700 transition-colors mr-4">
-                  Clear Cart
+                <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg hover:bg-yellow-700 transition-colors mr-4">
+                  Clear cart
                 </button>
                 <button className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">Place order</button>
               </>
