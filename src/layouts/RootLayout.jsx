@@ -7,7 +7,7 @@ function RootLayout() {
   return (
     <Providers>
         <Navbar />
-        <main>
+        <main className="p-10">
           
           <Outlet />
           

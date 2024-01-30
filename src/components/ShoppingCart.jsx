@@ -48,6 +48,9 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
           
         </div>
       </div>
+      <p className="p-5">
+        Please <a href="/register" className="font-bold">register</a> or log in to proceed with your checkout.
+      </p>
     </div>
   )
 }

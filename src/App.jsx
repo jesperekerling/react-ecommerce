@@ -14,6 +14,7 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import ProductDetails from './components/ProductDetails'
 import ShowCategory from './components/ShowCategory'
+import Register from './app/auth/Register'
 
 
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='/support' element={<Support />} />
             <Route path='/products/:id' element={<ProductDetails />} />
             <Route path='/categories/' element={<Categories />} />
+            <Route path='/register/' element={<Register />} />
             <Route path='/categories/:category' element={<ShowCategory />} />
             <Route path='*' element={<NotFound />} />
           </Routes>

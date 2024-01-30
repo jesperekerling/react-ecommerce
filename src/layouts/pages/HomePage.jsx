@@ -37,9 +37,7 @@ function HomePage() {
         : <ProductList products={products} />
       }
 
-      <h2 className='text-2xl text-blue-500 mt-10'>
-      To do:
-      </h2>
+      <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
         <li className='line-through'>Lista produkter</li>
         <li className='line-through'>Visa enksild produkt</li>

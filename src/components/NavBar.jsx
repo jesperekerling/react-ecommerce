@@ -11,7 +11,7 @@ export const Navbar = () => {
     <header className="w-full mb-44">
       <nav className="w-full bg-white z-20 dark-bg-gray-900 fixed top-0 border-0 broder-gray-200 dark:border-gray-600 container">
 
-        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
+        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3'>
 
 
           <NavLink to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
@@ -51,7 +51,7 @@ export const Navbar = () => {
             <button data-collapse-toggle='navbar-sticky' type='button' className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200' aria-controls='navbar-sticky' aria-expanded='false'>
                 <span className='sr-only'>Open main menu</span>
                 <svg className='w-5 h-5' aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 17 14'>
-                    <path stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M1 1h15M1 7h15M1 13h15'/>
+                    <path stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M1 1h15M1 7h15M1 13h15'/>
                 </svg>
             </button>
 
@@ -64,11 +64,11 @@ export const Navbar = () => {
 
 
             <Dropdown>
-                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"/>
+                <svg className="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 1 12c0 .5-.5 1-1 1H6a1 1 0 0 1-1-1L6 8h12Z"/>
                 </svg>
-                <span class="sr-only">Check out here</span>
-                <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
+                <span className="sr-only">Check out here</span>
+                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
                 { totalQuantity > 0 && <div className="absolute right-0 bg-red-600 text-white w-5 h-5 flex items-center justify-center rounded-full z-10">
                   <p className="text-xs">{ totalQuantity }</p>
                 </div>}

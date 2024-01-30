@@ -53,28 +53,30 @@ function ProductDetailsPage() {
   if(!product) return null
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 mt-10">
-      <div className="lg:max-w-[50%] mb-8">
+    <div className="flex">
+      <div className="md:w-3/5 mb-8">
         <img src={product.images[activeImg]} alt="product image" className="rounded-lg" />
         <div className="flex gap-2 mt-2">
           {product.images.map((image, index) => (
             <div key={index} onClick={() => setActiveImg(index)} className="cursor-pointer">
-              <img src={image} className="rounded-lg"/>
+              <img src={image} className="rounded-lg w-full" />
             </div>
           ))}
 
         </div>
       </div>
-      <div className="lg:max-w-[50%] text-white">
+      <div className="md:w-2/5">
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
-        <p>{product.description}</p>
-        <div className="flex items-center justify-between mt-12">
-          <p>Price: {product.price}</p>
-          <button onClick={handleClick} className="flex items-center gap-4 bg-slate-800 px-10 py-2 rounded-lg hover:bg-slate-900 transition-colors">
-            Add To Cart 
-            <BiSolidCartAdd className="h-5 w-5" />
-          </button>
-        </div>
+        <p className='text-gray-500 text-sm mb-3'>{product.category}</p>
+        <p className='text-blue-700 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
+        <p className="mb-10">{product.description}</p>
+        <button onClick={handleClick} className="flex items-center bg-blue-800 text-white px-10 py-4 rounded-lg hover:bg-slate-900 transition-colors w-full text-center">
+          <svg className="w-6 h-6 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.3L19 7H7.3"/>
+          </svg>
+          Add To Cart  
+        </button>
+        
       </div>
     </div>
   )

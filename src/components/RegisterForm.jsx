@@ -4,7 +4,7 @@ import { IoIosWarning } from "react-icons/io";
 import { RegisterFormSchema } from "../assets/js/Schemas";
 
 
-export const ContactForm = () => {
+export const RegisterForm = () => {
 
   const form = useFormik({
     initialValues: {
@@ -98,4 +98,4 @@ export const ContactForm = () => {
   )
 }
 
-export default ContactForm
+export default RegisterForm
