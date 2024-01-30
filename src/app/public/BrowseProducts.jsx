@@ -1,5 +1,6 @@
 import React from 'react'
-import ProductList from '../../components/ProductDetails'
+
+import ProductList from '../../components/BrowseProducts'
 
 function BrowseProducts() {
   return (

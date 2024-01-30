@@ -12,6 +12,7 @@ import Support from './app/public/Support.jsx'
 import ShowCategory from './components/ShowCategory.jsx'
 import Register from './app/auth/Register.jsx'
 import Login from './app/auth/Login.jsx'
+import BrowseProducts from './app/public/BrowseProducts.jsx'
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "products/:productId", element: <ProductDetailsPage /> },
+      { path: "products", element: <BrowseProducts /> },
       { path: 'checkout', element: <CheckoutPage />},
       { path: 'categories', element: <Categories />},
       { path: 'support', element: <Support />},
