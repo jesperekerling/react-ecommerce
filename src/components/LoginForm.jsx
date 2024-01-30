@@ -2,10 +2,10 @@ import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useAuth } from '../contexts/authContext'
-import { RegisterFormSchema } from "../assets/js/Schemas";
+import { LoginFormSchema } from "../assets/js/LoginSchema";
 
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
 
   const form = useFormik({
     initialValues: {
@@ -13,9 +13,9 @@ export const RegisterForm = () => {
       password: '',
       confirmPassword: ''
     },
-    validationSchema: RegisterFormSchema,onSubmit: (values) => {
+    validationSchema: LoginFormSchema,onSubmit: (values) => {
       console.log(values)
-      fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
+      fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -81,4 +81,4 @@ export const RegisterForm = () => {
   )
 }
 
-export default RegisterForm
+export default LoginForm

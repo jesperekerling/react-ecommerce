@@ -11,6 +11,7 @@ import Categories from './app/public/Categories.jsx'
 import Support from './app/public/Support.jsx'
 import ShowCategory from './components/ShowCategory.jsx'
 import Register from './app/auth/Register.jsx'
+import Login from './app/auth/Login.jsx'
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: 'checkout', element: <CheckoutPage />},
       { path: 'categories', element: <Categories />},
       { path: 'support', element: <Support />},
+      { path: 'login', element: <Login />},
       { path: 'register', element: <Register />},
       { path: 'categories/:category', element: <ShowCategory />},     
       { path: '*', element: <NotFound />}

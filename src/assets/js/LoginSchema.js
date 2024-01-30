@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-export const RegisterFormSchema = Yup.object({
+export const LoginFormSchema = Yup.object({
 /*  firstName: Yup.string()
     .required('You need to enter a first name')
     .min(3, 'Your name must be atleast 3 chars long'),
