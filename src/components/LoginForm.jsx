@@ -13,8 +13,7 @@ export const LoginForm = () => {
     initialValues: {
       email: '',
       password: '',
-      confirmPassword: '',
-      token: ''
+      confirmPassword: ''
     },
     validationSchema: LoginFormSchema,onSubmit: (values) => {
       console.log(values)
@@ -31,10 +30,10 @@ export const LoginForm = () => {
         })
       })
       .then(response => response.json())
-      .then(data =>
+      .then(data => {
         console.log(data),
         setToken(data.token)
-      )
+      })
       console.log(setToken)
       .catch(error => console.error('Error:', error));
 

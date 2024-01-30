@@ -7,7 +7,7 @@ import { RegisterFormSchema } from "../assets/js/Schemas";
 
 export const RegisterForm = () => {
 
-
+  
 
   const form = useFormik({
     initialValues: {
@@ -15,7 +15,8 @@ export const RegisterForm = () => {
       password: '',
       confirmPassword: ''
     },
-    validationSchema: RegisterFormSchema,onSubmit: (values) => {
+    validationSchema: RegisterFormSchema,
+    onSubmit: (values) => {
       console.log(values)
       fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
         method: 'POST',
@@ -30,10 +31,10 @@ export const RegisterForm = () => {
         })
       })
       .then(response => response.json())
-      .then(
-        data => console.log(data),
-        setToken(data.token)
-      )
+      .then(data => {
+        console.log(data);
+        setToken(data.token); // call setToken inside the .then() callback
+      })
       console.log(setToken)
       .catch(error => console.error('Error:', error));
 

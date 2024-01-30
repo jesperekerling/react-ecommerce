@@ -73,6 +73,7 @@ const AuthContextProvider = ({ children }) => {
       setToken(data.token)
       return { success: 'User Logged In' }
       
+      
     } catch (error) {
       return { error: error.message }
     }
