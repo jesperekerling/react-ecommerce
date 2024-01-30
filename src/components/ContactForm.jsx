@@ -22,7 +22,7 @@ export const ContactForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: 'values.name',
+          name: 'values.name',
           email: 'values.email',
           message: 'values.message',
         })
@@ -35,13 +35,13 @@ export const ContactForm = () => {
   return (
     <form onSubmit={form.handleSubmit} className="reg-form" noValidate>
       <FormInput
-        label="First Name"
-        id="firstName"
-        name="firstName"
+        label="Name"
+        id="name"
+        name="name"
         type="text"
-        value={form.values.firstName}
+        value={form.values.name}
         onChange={form.handleChange}
-        errorMsg={form.errors.firstName && form.touched.firstName && form.errors.firstName}
+        errorMsg={form.errors.name && form.touched.name && form.errors.name}
         onBlur={form.handleBlur}
         className={"input-group"}
       />

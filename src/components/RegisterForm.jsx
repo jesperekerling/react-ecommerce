@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
+import { useAuth } from '../contexts/authContext'
 import { RegisterFormSchema } from "../assets/js/Schemas";
 
 
@@ -24,8 +25,11 @@ export const RegisterForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          firstName: 'values.name',
-          secondParam: 'yourOtherValue',
+          firstName: 'values.firstName',
+          lastName: 'values.lastName',
+          email: 'values.email',
+          password: 'values.password',
+          confirmPassword: 'values.confirmPassword',
         })
       })
     }
@@ -92,7 +96,7 @@ export const RegisterForm = () => {
         <IoIosWarning />
       </div>} */}
 
-      <button type="submit" className="btn btn-primary">Register</button>
+      <button type="submit" className="btn btn-primary" onSubmit={form.handleSubmit}>Register</button>
       {/* <p>{JSON.stringify(formData)}</p> */}
     </form>
   )
