@@ -6,6 +6,11 @@ const AuthContextProvider = ({ children }) => {
 
   const [token, setToken] = useState(null)
 
+  const saveToken = (token) => {
+    setToken(token);
+  }
+  
+
 
   useEffect(() => {
     if(token) return

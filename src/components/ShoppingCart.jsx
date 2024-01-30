@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { CartItem } from "./CartItem"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 // import { clearCart } from "../store/features/shoppingCart/shoppingCartSlice"
 import { useCart } from "../contexts/cartContext"
 
@@ -49,7 +49,7 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
         </div>
       </div>
       <p className="p-5">
-        Please <a href="/register" className="font-bold">register</a> or log in to proceed with your checkout.
+        Please <NavLink to="/register" className="font-bold">register</NavLink> or <NavLink to="/login" className="font-bold">log in</NavLink> to proceed with your checkout.
       </p>
     </div>
   )

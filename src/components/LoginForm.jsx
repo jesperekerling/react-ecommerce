@@ -7,6 +7,8 @@ import { LoginFormSchema } from "../assets/js/LoginSchema";
 
 export const LoginForm = () => {
 
+    
+    
   const form = useFormik({
     initialValues: {
       email: '',
@@ -28,7 +30,10 @@ export const LoginForm = () => {
         })
       })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data =>
+        console.log(data),
+        setToken(data.token)
+      )
       .catch(error => console.error('Error:', error));
 
     }
@@ -36,7 +41,10 @@ export const LoginForm = () => {
 
   console.log(form)
 
+  
+
   return (
+    
     <form onSubmit={form.handleSubmit} className="reg-form" noValidate>
       <FormInput
         label="Email"

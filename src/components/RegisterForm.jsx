@@ -7,6 +7,8 @@ import { RegisterFormSchema } from "../assets/js/Schemas";
 
 export const RegisterForm = () => {
 
+  
+
   const form = useFormik({
     initialValues: {
       email: '',
@@ -28,7 +30,11 @@ export const RegisterForm = () => {
         })
       })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(
+        data => console.log(data),
+        setToken(data.token)
+      )
+      console.log(setToken)
       .catch(error => console.error('Error:', error));
 
     }
