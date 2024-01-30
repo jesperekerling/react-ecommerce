@@ -10,8 +10,6 @@ const AuthContextProvider = ({ children }) => {
     setToken(token);
   }
   
-
-
   useEffect(() => {
     if(token) return
 
@@ -92,7 +90,7 @@ const AuthContextProvider = ({ children }) => {
     logout
   }
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ token, saveToken }}>
       { children }
     </AuthContext.Provider>
   )

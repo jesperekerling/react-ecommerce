@@ -6,6 +6,7 @@ function Login() {
     <div>
         <h1>Login</h1>
         <p>Log in with email and password. If you need an account, <a href="/register">please register here</a>.</p>
+        
         <LoginForm />
     </div>
   )

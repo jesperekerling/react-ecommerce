@@ -23,6 +23,8 @@ export const LoginFormSchema = Yup.object({
   confirmPassword: Yup.string()
     .required('You need to confirm your password')
     .oneOf([Yup.ref('password'), null], 'Passwords must match'),
+
+  token: Yup.string()
 /*
   message: Yup.string()
     .required('You need to enter a longer message.')

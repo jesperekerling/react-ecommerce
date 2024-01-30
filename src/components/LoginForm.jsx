@@ -8,12 +8,13 @@ import { LoginFormSchema } from "../assets/js/LoginSchema";
 export const LoginForm = () => {
 
     
-    
+
   const form = useFormik({
     initialValues: {
       email: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      token: ''
     },
     validationSchema: LoginFormSchema,onSubmit: (values) => {
       console.log(values)
@@ -34,6 +35,7 @@ export const LoginForm = () => {
         console.log(data),
         setToken(data.token)
       )
+      console.log(setToken)
       .catch(error => console.error('Error:', error));
 
     }
@@ -83,7 +85,7 @@ export const LoginForm = () => {
         <IoIosWarning />
       </div>} */}
 
-      <button type="submit" className="btn btn-primary" onSubmit={form.handleSubmit}>Register</button>
+      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>Log in</button>
       {/* <p>{JSON.stringify(formData)}</p> */}
     </form>
   )

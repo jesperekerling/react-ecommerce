@@ -7,7 +7,7 @@ import { RegisterFormSchema } from "../assets/js/Schemas";
 
 export const RegisterForm = () => {
 
-  
+
 
   const form = useFormik({
     initialValues: {
