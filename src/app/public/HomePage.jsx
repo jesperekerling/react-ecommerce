@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductList from '../../components/ProductList'
-import Categories from './Categories'
+import Categories from '../../app/public/Categories.jsx'
+
 
 function HomePage() {
   return (

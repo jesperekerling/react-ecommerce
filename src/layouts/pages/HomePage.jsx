@@ -2,6 +2,8 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from "../../store/features/products/productsSlice"
 import { ProductList } from "../../components/ProductList"
+import Categories from '../../app/public/Categories.jsx'
+
 
 function HomePage() {
 
@@ -21,6 +23,14 @@ function HomePage() {
 
   return (
     <div className="container mx-auto bg-green-100 mt-10">
+        <h1 className='m-10 text-3xl'>Hey Customer!</h1>
+        <p className='mb-16'>All new customers get 10% off first order with <strong>FC10 Code</strong>.</p>
+
+
+        <Categories />
+
+        <h2 className='text-2xl font-bold mt-20 mb-10'>Products</h2>
+
       {
         loading 
         ? <ProductList.Skeleton />
