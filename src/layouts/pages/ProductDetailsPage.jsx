@@ -2,13 +2,15 @@ import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link, NavLink } from "react-router-dom";
-import { BiSolidCartAdd } from "react-icons/bi";
-import { useDispatch } from 'react-redux'
 import { addToCart } from "../../store/features/shoppingCart/shoppingCartSlice";
 import { useCart } from "../../contexts/cartContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 function ProductDetailsPage() {
+
+  const successMsg = () => toast("");
 
   const { productId } = useParams()
 
@@ -43,6 +45,7 @@ function ProductDetailsPage() {
   const handleClick = () => {
     // dispatch(addToCart(product))
     addToCart(product)
+    toast('Added to cart!')
   }
 
   if(loading) {
@@ -79,6 +82,10 @@ function ProductDetailsPage() {
         </button>
         
       </div>
+      <ToastContainer
+          position="top-center"
+          autoClose={15000}
+        />
     </div>
   )
 }

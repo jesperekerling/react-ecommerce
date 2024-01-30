@@ -8,7 +8,7 @@ import { LoginFormSchema } from "../assets/js/LoginSchema";
 export const LoginForm = () => {
 
     
-
+  
   const form = useFormik({
     initialValues: {
       email: '',
@@ -34,7 +34,6 @@ export const LoginForm = () => {
         console.log(data),
         setToken(data.token)
       })
-      console.log(setToken)
       .catch(error => console.error('Error:', error));
 
     }
@@ -65,16 +64,6 @@ export const LoginForm = () => {
         value={form.values.password}
         onChange={form.handleChange}
         errorMsg={form.errors.password && form.touched.password && form.errors.password}
-        onBlur={form.handleBlur}
-      />
-      <FormInput
-        label="Confirm Password"  
-        id="confirmPassword"
-        name="confirmPassword"
-        type="password"
-        value={form.values.confirmPassword}
-        onChange={form.handleChange}
-        errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
         onBlur={form.handleBlur}
       />
       

@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useAuth } from '../contexts/authContext'
-import { RegisterFormSchema } from "../assets/js/Schemas";
+import { RegisterFormSchema } from "../assets/js/RegisterSchema";
 
 
 export const RegisterForm = () => {

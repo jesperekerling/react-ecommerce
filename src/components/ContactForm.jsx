@@ -1,18 +1,23 @@
 import { useFormik } from "formik";
 import { FormInput } from "../components/FormInput"
 import { IoIosWarning } from "react-icons/io";
-import { RegisterFormSchema } from "../assets/js/Schemas";
-
+import { SupportFormSchema } from "../assets/js/SupportSchema";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const ContactForm = () => {
 
+  // Success-message after form is submitted.
+  const successMsg = () => toast("");
+
+
   const form = useFormik({
     initialValues: {
-      firstName: '',
+      name: '',
       message: '',
       email: '',
     },
-    validationSchema: RegisterFormSchema,
+    validationSchema: SupportFormSchema,
     onSubmit: (values) => {
       console.log(values)
       fetch('https://js2-ecommerce-api.vercel.app/api/messages', {
@@ -27,6 +32,12 @@ export const ContactForm = () => {
           message: 'values.message',
         })
       })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        toast('Thank you for you feeback! We will read it with care =)')
+      })
+      .catch(error => console.error('Error:', error));
     }
   })
 
@@ -79,6 +90,10 @@ export const ContactForm = () => {
       <button type="submit" className="text-center mt-10 bg-blue-800 text-white">
         Send Message
       </button>
+      <ToastContainer
+          position="top-center"
+          autoClose={15000}
+        />
       {/* <p>{JSON.stringify(formData)}</p> */}
     </form>
   )
