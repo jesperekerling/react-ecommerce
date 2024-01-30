@@ -35,8 +35,8 @@ function App() {
             <Route path='/products' element={<BrowseProducts />} />
             <Route path='/support' element={<Support />} />
             <Route path='/products/:id' element={<ProductDetails />} />
-            <Route path='/categories/' element={<Categories />} />
             <Route path='/register/' element={<Register />} />
+            <Route path='/categories/' element={<Categories />} />
             <Route path='/categories/:category' element={<ShowCategory />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
