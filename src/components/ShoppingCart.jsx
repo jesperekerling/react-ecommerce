@@ -3,16 +3,44 @@ import { CartItem } from "./CartItem"
 import { Link, NavLink } from "react-router-dom"
 // import { clearCart } from "../store/features/shoppingCart/shoppingCartSlice"
 import { useCart } from "../contexts/cartContext"
-
+import { useAuth } from '../contexts/authContext';
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
 
   // const { cart, totalPrice } = useSelector(state => state.shoppingCart)
-
+  
+  const { token } = useAuth();
   const { cart, totalPrice, clearCart } = useCart()
+
+  const placeOrder = async () => {
+    const response = await fetch('https://js2-ecommerce-api.vercel.app/api/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        products: cart.map(item => ({
+          productId: item.product._id,
+          quantity: item.quantity
+        }))
+      })
+    });
+
+    if (!response.ok) {
+      // handle error...
+    }
+
+    toast.success("Thank you, your order has been placed!");
+
+    clearCart();
+  };
 
     return (
     <div className="bg-white py-5 px-8">
+      <ToastContainer />
       <div>
         { cart.length < 1 && (
           <div className="p-2 text-center">
@@ -24,33 +52,36 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
         ))}
       </div>
       <hr className="border-gray-400" />
-      <div className="flex justify-between items-center p-2">
+      <div className="flex justify-between items-center p-2 mt-3">
         <div>
-          <p>Total Price: { totalPrice } kr</p>
+          <p>Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
           <small className="text-gray-600">Inkl. vat</small>
         </div>
         <div>
-          { isCheckoutPage
-            ? (
-              <>
-                <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg transition-colors mr-4">
-                  Clear cart
-                </button>
-                <button className="bg-blue-700 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
-                  Place order
-                </button>
-              </>
-            )
-            : <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-900">
+          { isCheckoutPage && token && (
+            <>
+              <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg transition-colors mr-4">
+                Clear cart
+              </button>
+              <button onClick={placeOrder} className="bg-blue-700 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
+                Place order
+              </button>
+            </>
+          )}
+          { !isCheckoutPage && (
+            <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-white">
               Checkout
-              </Link>
-          }
-          
+            </Link>
+          )}
         </div>
       </div>
-      <p className="p-5">
-        Please <NavLink to="/register" className="font-bold">register</NavLink> or <NavLink to="/login" className="font-bold">log in</NavLink> to proceed with your checkout.
-      </p>
+      
+      {!token && (
+        <p className="p-5 bg-blue-100 mt-5 rounded-lg">
+          Please <NavLink to="/register" className="font-bold">register</NavLink> or <NavLink to="/login" className="font-bold">log in</NavLink> to proceed with your checkout.
+        </p>
+      )}
     </div>
+    
   )
 }

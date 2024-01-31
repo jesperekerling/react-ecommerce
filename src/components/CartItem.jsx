@@ -24,7 +24,7 @@ export const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="flex justify-between items-center p-10 border-b last-of-type:border-b-0">
+    <div className="flex justify-between items-center p-3 border-b last-of-type:border-b-0 mb-3">
       <div className="flex items-center">
         <img src={item.product.images[0]} alt="product-image" className="w-[100px]" />
         <div className="p-3 text-xs">
