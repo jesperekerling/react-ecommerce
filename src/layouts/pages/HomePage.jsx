@@ -45,11 +45,12 @@ function HomePage() {
 
       <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
-        <li>HALVKLAR Logga in - Komma till en inloggad-sida.</li>
-        <li>Registrera - Komma till en inloggad-sida.</li>
+        <li>Gör logged-in så ingen kan se den som inte är inloggad.</li>
         <li>Skicka ORDER till API</li>
         <li>ADMIN: lista ordrar</li>
         <li>Roligare readme-fil</li>
+        <li className='line-through'>Logga in - Komma till en inloggad-sida.</li>
+        <li className='line-through'>Registrera - Komma till en inloggad-sida.</li>
         <li className='line-through'>Lista produkter</li>
         <li className='line-through'>Visa enksild produkt</li>
         <li className='line-through'>Navigering med react-router-dom</li>

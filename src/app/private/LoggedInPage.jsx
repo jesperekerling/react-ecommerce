@@ -1,4 +1,5 @@
-import React from 'react'
+
+import DisplayUserOrders from '../../components/DisplayUserOrders'
 
 function LoggedInPage() {
   return (
@@ -6,6 +7,8 @@ function LoggedInPage() {
         <h1 className='mb-10'>Welcome in, user!</h1>
 
         <h3 className='mb-10'>My Orders</h3>
+
+        <DisplayUserOrders />
 
         
 

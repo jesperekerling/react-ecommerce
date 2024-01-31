@@ -70,7 +70,7 @@ function ProductDetailsPage() {
         </div>
       </div>
       <div className="md:w-2/5">
-        <p className='text-gray-500 text-sm mb-3'><Link to={`/categories/${product.category}`}>{ product?.category}</Link></p>
+        <p className='text-gray-500 text-sm mb-3'><Link to={`/categories/${product.category}`} className="capitalize">{ product?.category}</Link></p>
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
         <p className='text-blue-700 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
         <p className="mb-10">{product.description}</p>

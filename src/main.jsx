@@ -14,7 +14,9 @@ import NotFound from './app/public/NotFound.jsx'
 
 import Register from './app/auth/Register.jsx'
 import Login from './app/auth/Login.jsx'
+
 import LoggedInPage from './app/private/LoggedInPage.jsx'
+
 
 
 const router = createBrowserRouter([
