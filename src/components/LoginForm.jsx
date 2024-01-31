@@ -10,13 +10,19 @@ export const LoginForm = () => {
 
     
   const successMsg = () => toast("");
+
+  const {login, token} = useAuth()
+
   const form = useFormik({
     initialValues: {
       email: '',
       password: '',
       confirmPassword: ''
     },
-    validationSchema: LoginFormSchema,onSubmit: (values) => {
+    validationSchema: LoginFormSchema,
+    onSubmit: login
+    /*
+    (values) => {
       console.log(values)
       fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
         method: 'POST',
@@ -37,8 +43,8 @@ export const LoginForm = () => {
         setToken(data.token)
       })
       .catch(error => console.error('Error:', error));
-
     }
+    */
   })
 
   console.log(form)
@@ -83,7 +89,11 @@ export const LoginForm = () => {
         />
 
       {/* <p>{JSON.stringify(formData)}</p> */}
+
+      {token}
+      
     </form>
+    
   )
 }
 

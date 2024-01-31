@@ -5,10 +5,6 @@ export const AuthContext = createContext()
 const AuthContextProvider = ({ children }) => {
 
   const [token, setToken] = useState(null)
-
-  const saveToken = (token) => {
-    setToken(token);
-  }
   
   useEffect(() => {
     if(token) return
@@ -91,7 +87,7 @@ const AuthContextProvider = ({ children }) => {
     logout
   }
   return (
-    <AuthContext.Provider value={{ token, saveToken }}>
+    <AuthContext.Provider value={value}>
       { children }
     </AuthContext.Provider>
   )

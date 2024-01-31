@@ -11,6 +11,8 @@ export const RegisterForm = () => {
 
   const successMsg = () => toast("");
 
+  const { register } = useAuth()
+
   const form = useFormik({
     initialValues: {
       email: '',
@@ -18,7 +20,9 @@ export const RegisterForm = () => {
       confirmPassword: ''
     },
     validationSchema: RegisterFormSchema,
-    onSubmit: (values) => {
+    onSubmit: register
+    /*
+    (values) => {
       console.log(values)
       fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
         method: 'POST',
@@ -41,6 +45,7 @@ export const RegisterForm = () => {
       console.log(setToken)
       .catch(error => console.error('Error:', error));
     }
+    */
   })
 
   console.log(form)
