@@ -51,7 +51,7 @@ function HomePage() {
 
       <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
-        <li>Skicka ORDER till API</li>
+        <li className="line-through">Skicka ORDER till API</li>
         <li>Roligare readme-fil</li>
         <li className='line-through'>Gör logged-in så ingen kan se den som inte är inloggad.</li>
         <li className='line-through'>ADMIN: lista ordrar</li>

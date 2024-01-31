@@ -19,16 +19,21 @@ function DisplayUserOrders() {
   return (
     <div>
       {orders.map((order, index) => (
-        <div key={index}>
-          <h3 className='font-bold text-xl p-5 text-left'>Order number: {index + 1}</h3>
-          <p>Total Price: {order.totalPrice} kr</p>
+        <div key={index} className='bg-gray-50 mt-10'>
+          <div className='flex bg-blue-50 pt-2 pb-2 px-10 '>
+            <h3 className='flex-1 font-bold text-xl py-5 mt-2 text-left'>Order number: {index + 1}</h3>
+            <p className='text-left align-middle mt-2 text-right'>
+              <span className='text-sm text-gray-500'>Total Price</span>
+              <span className='block mt-2 font-bold'>{order.totalPrice} kr</span>
+            </p>
+          </div>
           {order.products.map((product, i) => (
-            <div key={i} className='flex justify-between items-center p-4'>
-              <img src={product.product.images[0]} alt={product.product.name} width={120} />
-              <h4>Product {i + 1}</h4>
-              <p>Name: {product.product.name}</p>
-              <p>Price: {product.product.price}</p>
-              <p>Quantity: {product.quantity}</p>
+            <div key={i} className='flex justify-between items-center px-10 py-4'>
+              <img src={product.product.images[0]} alt={product.product.name} width={120} className='rounded-lg' />
+              <h4 className='text-gray-500'>Product {i + 1}</h4>
+              <p>{product.product.name}</p>
+              <p className='text-gray-500'>{product.product.price} kr</p>
+              <p className='text-gray-500'>Quantity: {product.quantity}</p>
             </div>
           ))}
         </div>

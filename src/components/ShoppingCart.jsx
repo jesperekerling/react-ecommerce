@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
 import { CartItem } from "./CartItem"
 import { Link, NavLink } from "react-router-dom"
-// import { clearCart } from "../store/features/shoppingCart/shoppingCartSlice"
 import { useCart } from "../contexts/cartContext"
 import { useAuth } from '../contexts/authContext';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
 
-  // const { cart, totalPrice } = useSelector(state => state.shoppingCart)
-  
+  const navigate = useNavigate();
   const { token } = useAuth();
   const { cart, totalPrice, clearCart } = useCart()
 
@@ -30,12 +29,18 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
     });
 
     if (!response.ok) {
-      // handle error...
+      <p>Errorrrrrr!!!</p>
     }
+
+    // Displays answer from API in the console
+    const responseData = await response.json();
+    console.log(responseData);
 
     toast.success("Thank you, your order has been placed!");
 
     clearCart();
+
+    navigate('/logged-in');
   };
 
     return (
@@ -44,7 +49,12 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
       <div>
         { cart.length < 1 && (
           <div className="p-2 text-center">
-            <p>Your cart is empty</p>
+            <p>Your cart is empty..</p>
+            <Link to='/products'>
+              <button className="py-4 bg-blue-100 my-5 px-8 font-bold text-sm">
+                Browse products to add
+              </button>
+            </Link>
           </div>
         )}
         { cart.map(item => (
