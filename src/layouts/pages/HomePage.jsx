@@ -45,10 +45,10 @@ function HomePage() {
 
       <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
-        <li>Gör logged-in så ingen kan se den som inte är inloggad.</li>
         <li>Skicka ORDER till API</li>
-        <li>ADMIN: lista ordrar</li>
         <li>Roligare readme-fil</li>
+        <li className='line-through'>Gör logged-in så ingen kan se den som inte är inloggad.</li>
+        <li className='line-through'>ADMIN: lista ordrar</li>
         <li className='line-through'>Logga in - Komma till en inloggad-sida.</li>
         <li className='line-through'>Registrera - Komma till en inloggad-sida.</li>
         <li className='line-through'>Lista produkter</li>

@@ -18,7 +18,7 @@ export const LoginForm = () => {
     if (result.success) {
       navigate('/logged-in');
     }
-    console.log('hej')
+
   }
 
   const form = useFormik({
