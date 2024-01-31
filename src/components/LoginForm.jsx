@@ -3,12 +3,13 @@ import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useAuth } from '../contexts/authContext'
 import { LoginFormSchema } from "../assets/js/LoginSchema";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const LoginForm = () => {
 
     
-  
+  const successMsg = () => toast("");
   const form = useFormik({
     initialValues: {
       email: '',
@@ -32,6 +33,7 @@ export const LoginForm = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data),
+        toast('Welcome! You are now logged in.'),
         setToken(data.token)
       })
       .catch(error => console.error('Error:', error));
@@ -74,6 +76,12 @@ export const LoginForm = () => {
       </div>} */}
 
       <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>Log in</button>
+
+      <ToastContainer
+          position="top-center"
+          autoClose={15000}
+        />
+
       {/* <p>{JSON.stringify(formData)}</p> */}
     </form>
   )

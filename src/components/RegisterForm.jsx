@@ -3,11 +3,13 @@ import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useAuth } from '../contexts/authContext'
 import { RegisterFormSchema } from "../assets/js/RegisterSchema";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export const RegisterForm = () => {
 
-  
+  const successMsg = () => toast("");
 
   const form = useFormik({
     initialValues: {
@@ -33,11 +35,11 @@ export const RegisterForm = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
+        toast('User registred. Success')
         setToken(data.token); // call setToken inside the .then() callback
       })
       console.log(setToken)
       .catch(error => console.error('Error:', error));
-
     }
   })
 
@@ -75,15 +77,15 @@ export const RegisterForm = () => {
         errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
         onBlur={form.handleBlur}
       />
-      
-      {/* { errors.main && 
-      <div className="main-error">
-        <p>{ errors.main }</p>
-        <IoIosWarning />
-      </div>} */}
+    
 
       <button type="submit" className="btn btn-primary" onSubmit={form.handleSubmit}>Register</button>
-      {/* <p>{JSON.stringify(formData)}</p> */}
+
+      <ToastContainer
+          position="top-center"
+          autoClose={15000}
+        />
+
     </form>
   )
 }

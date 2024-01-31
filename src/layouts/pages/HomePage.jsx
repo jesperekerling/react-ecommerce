@@ -16,13 +16,13 @@ function HomePage() {
   const { products, loading, error } = useSelector(state => state.productList)
 
   if(error) return (
-    <div className="mt-10">
+    <div className="mt-4">
       <p className="text-red-600">{error}</p>
     </div>
   )
 
   return (
-    <div className="container mx-auto bg-green-100 mt-10">
+    <div className="container mx-auto bg-green-100 mt-4">
         <h1 className='m-10 text-3xl'>Hey Customer!</h1>
         <p className='mb-16'>All new customers get 10% off first order with <strong>FC10 Code</strong>.</p>
 
@@ -43,14 +43,15 @@ function HomePage() {
         <li className='line-through'>Visa enksild produkt</li>
         <li className='line-through'>Navigering med react-router-dom</li>
         <li className='line-through'>Kategorier</li>
-        <li>Kontaktformulär</li>
+        <li className='line-through'>Kontaktformulär</li>
+        <li className='line-through'>Check-out-sida</li>
+        <li className='line-through'>Logga in</li>
+        <li className='line-through'>Registrera</li>
+        <li>Logga in - Komma till en inloggad-sida.</li>
+        <li>Registrera - Komma till en inloggad-sida.</li>
         <li>EXTRA: Fixa Dropdown på categories i menyn</li>
-        <li>Check-out-sida</li>
-        <li>Varukorg i Zustand</li>
-        <li>Logga in</li>
-        <li>Registrera</li>
+        <li>Skicka ORDER till API</li>
         <li>ADMIN: lista ordrar</li>
-        <li>Egeninlärning: Redux Toolkit</li>
       </ul>
     </div>
 

@@ -1,30 +1,30 @@
 import { useDispatch } from "react-redux"
 import { removeOne, addToCart, removeItem } from "../store/features/shoppingCart/shoppingCartSlice"
 import { useCart } from "../contexts/cartContext"
+import { toast } from "react-toastify"
 
 export const CartItem = ({ item }) => {
 
 
-  // const dispatch = useDispatch()
   const { addToCart, removeOne, removeItem } = useCart()
 
   const removeOneFromCart = () => {
-    // dispatch(removeOne(item.product._id))
     removeOne(item.product._id)
+    toast('One product removed form basket')
   }
 
   const addOneToCart = () => {
-    // dispatch(addToCart(item.product))
     addToCart(item.product)
+    toast('Product added to basket')
   }
 
   const deleteProduct = () => {
-    // dispatch(removeItem(item.product._id))
     removeItem(item.product._id)
+    toast('Deleted product')
   }
 
   return (
-    <div className="flex justify-between items-center p-2 border-b last-of-type:border-b-0">
+    <div className="flex justify-between items-center p-10 border-b last-of-type:border-b-0">
       <div className="flex items-center">
         <img src={item.product.images[0]} alt="product-image" className="w-[100px]" />
         <div className="p-3 text-xs">

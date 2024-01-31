@@ -11,10 +11,8 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
 
   const { cart, totalPrice, clearCart } = useCart()
 
-  const dispatch = useDispatch()
-
-  return (
-    <div className="bg-white">
+    return (
+    <div className="bg-white py-5 px-8">
       <div>
         { cart.length < 1 && (
           <div className="p-2 text-center">
@@ -28,20 +26,22 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
       <hr className="border-gray-400" />
       <div className="flex justify-between items-center p-2">
         <div>
-          <p>Total Price: { totalPrice } </p>
+          <p>Total Price: { totalPrice } kr</p>
           <small className="text-gray-600">Inkl. vat</small>
         </div>
         <div>
           { isCheckoutPage
             ? (
               <>
-                <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg hover:bg-yellow-700 transition-colors mr-4">
+                <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg transition-colors mr-4">
                   Clear cart
                 </button>
-                <button className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">Place order</button>
+                <button className="bg-blue-700 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
+                  Place order
+                </button>
               </>
             )
-            : <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-slate-800 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
+            : <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-900">
               Checkout
               </Link>
           }
