@@ -11,6 +11,9 @@ export const LoginForm = () => {
   const successMsg = () => toast("");
   const navigate = useNavigate();
   const {login, token} = useAuth()
+  if (token) {
+    navigate('/logged-in');
+  }
 
   const handleLogin = async (formData) => {
     const result = await login(formData);
