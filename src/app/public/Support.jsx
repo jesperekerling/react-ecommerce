@@ -6,12 +6,14 @@ import ContactForm from '../../components/ContactForm'
 function Support() {
     return (
       <div className=''>
+        
         <h2 className="text-center text-2xl font-bold mb-10 bg-blue-800 p-10 text-white mt-10">
           Customer Support
         </h2>
 
+        <p className='mb-4'>We love feedback!</p>
         <p className='mb-10'>
-          Contact if you have any issues. We are happy to help you.
+          Contact us if you have any issues. We will be happy to assist you.
         </p>
         
         <ContactForm />

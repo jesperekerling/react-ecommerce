@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from "../../store/features/products/productsSlice"
 import { ProductList } from "../../components/ProductList"
 import Categories from '../../app/public/Categories.jsx'
+import { Link } from "react-router-dom";
+
 
 
 function HomePage() {
@@ -22,11 +24,15 @@ function HomePage() {
   )
 
   return (
-    <div className="container mx-auto bg-green-100 mt-4">
+    <div className="container mx-auto mt-4">
+
+
+      <div className="p-5 bg-gray-100 rounded">
         <h1 className='m-10 text-3xl'>Hey Customer!</h1>
-        <p className='mb-16'>All new customers get 10% off first order with <strong>FC10 Code</strong>.</p>
+        <p className='mb-16'>If you want to purchase. Please <Link to="register">register</Link> or <Link to="login">log in</Link>.</p>
+      </div>
 
-
+        <h2 className="mt-8 mb-2 font-bold text-2xl">Categories</h2>
         <Categories />
 
         <h2 className='text-2xl font-bold mt-20 mb-10'>Products</h2>

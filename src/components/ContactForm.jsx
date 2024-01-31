@@ -81,20 +81,15 @@ export const ContactForm = () => {
         </textarea>
       </div>
 
-      {/* { errors.main && 
-      <div className="main-error">
-        <p>{ errors.main }</p>
-        <IoIosWarning />
-      </div>} */}
-
       <button type="submit" className="text-center mt-10 bg-blue-800 text-white">
         Send Message
       </button>
+      
       <ToastContainer
           position="top-center"
           autoClose={15000}
         />
-      {/* <p>{JSON.stringify(formData)}</p> */}
+
     </form>
   )
 }
