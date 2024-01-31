@@ -74,11 +74,13 @@ export const ContactForm = () => {
           placeholder="Write message here.."
           value={form.values.message}
           onChange={form.handleChange}
-          errorMsg={form.errors.message && form.touched.message && form.errors.message}
           onBlur={form.handleBlur}
           className="w-full"
         >
         </textarea>
+        {form.errors.message && form.touched.message && (
+          <div className="error">{form.errors.message}</div>
+        )}
       </div>
 
       <button type="submit" className="text-center mt-10 bg-blue-800 text-white">
