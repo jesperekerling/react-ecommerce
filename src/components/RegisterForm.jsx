@@ -2,16 +2,23 @@ import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useAuth } from '../contexts/authContext'
+import { useNavigate } from 'react-router-dom';
 import { RegisterFormSchema } from "../assets/js/RegisterSchema";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
 export const RegisterForm = () => {
-
   const successMsg = () => toast("");
-
+  const navigate = useNavigate();
   const { register } = useAuth()
+
+  const handleRegister = async (formData) => {
+    const result = await register(formData);
+    if (result.success) {
+      navigate('/logged-in');
+    }
+  }
 
   const form = useFormik({
     initialValues: {
@@ -20,32 +27,7 @@ export const RegisterForm = () => {
       confirmPassword: ''
     },
     validationSchema: RegisterFormSchema,
-    onSubmit: register
-    /*
-    (values) => {
-      console.log(values)
-      fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-          confirmPassword: values.confirmPassword,
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        toast('User registred. Success')
-        setToken(data.token); // call setToken inside the .then() callback
-      })
-      console.log(setToken)
-      .catch(error => console.error('Error:', error));
-    }
-    */
+    onSubmit: handleRegister // pass handleRegister here instead of register
   })
 
   console.log(form)
@@ -59,7 +41,7 @@ export const RegisterForm = () => {
         type="email"
         value={form.values.email}
         onChange={form.handleChange}
-        //errorMsg={form.errors.email && form.touched.email && form.errors.email}
+        errorMsg={form.errors.email && form.touched.email && form.errors.email}
         onBlur={form.handleBlur}
       />
       <FormInput
@@ -84,7 +66,7 @@ export const RegisterForm = () => {
       />
     
 
-      <button type="submit" className="btn btn-primary" onSubmit={form.handleSubmit}>Register</button>
+      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>Register</button>
 
       <ToastContainer
           position="top-center"

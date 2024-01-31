@@ -29,7 +29,7 @@ function HomePage() {
 
       <div className="p-5 bg-gray-100 rounded">
         <h1 className='m-10 text-3xl'>Hey Customer!</h1>
-        <p className='mb-16'>If you want to purchase. Please <Link to="register">register</Link> or <Link to="login">log in</Link>.</p>
+        <p className='mb-16'>If you want to purchase. Please <Link to="register" className="font-bold">register</Link> or <Link to="login" className="font-bold">log in</Link>.</p>
       </div>
 
         <h2 className="mt-8 mb-2 font-bold text-2xl">Categories</h2>
@@ -45,7 +45,7 @@ function HomePage() {
 
       <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
-        <li>Logga in - Komma till en inloggad-sida.</li>
+        <li>HALVKLAR Logga in - Komma till en inloggad-sida.</li>
         <li>Registrera - Komma till en inloggad-sida.</li>
         <li>Skicka ORDER till API</li>
         <li>ADMIN: lista ordrar</li>

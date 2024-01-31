@@ -45,7 +45,7 @@ export const LoginForm = () => {
         type="email"
         value={form.values.email}
         onChange={form.handleChange}
-        //errorMsg={form.errors.email && form.touched.email && form.errors.email}
+        errorMsg={form.errors.email && form.touched.email && form.errors.email}
         onBlur={form.handleBlur}
       />
       <FormInput
@@ -59,12 +59,6 @@ export const LoginForm = () => {
         onBlur={form.handleBlur}
       />
       
-      {/* { errors.main && 
-      <div className="main-error">
-        <p>{ errors.main }</p>
-        <IoIosWarning />
-      </div>} */}
-
       <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>
         Log in
       </button>
@@ -73,10 +67,6 @@ export const LoginForm = () => {
           position="top-center"
           autoClose={15000}
         />
-
-      {/* <p>{JSON.stringify(formData)}</p> */}
-
-      {token}
       
     </form>
     
