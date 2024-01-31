@@ -1,8 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { Dropdown } from "./Dropdown";
 import { useCart } from "../contexts/cartContext";
+import { useAuth } from '../contexts/authContext'
+
 
 export const Navbar = () => {
+
+  const {login, token, logout} = useAuth()
+
 
   // const { totalQuantity } = useSelector(state => state.shoppingCart)
   const { totalQuantity } = useCart()
@@ -37,6 +42,10 @@ export const Navbar = () => {
                   Categories
                 </NavLink>
               </li>
+              <li>
+                {!token && <Link to='/login' className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'>Log in</Link>}
+                {token && <Link to='/' onClick={logout} className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'>Log out</Link>}
+              </li>
               <li className="md:hidden block">
                 <NavLink to='/Support' className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'>
                   Support
@@ -55,11 +64,14 @@ export const Navbar = () => {
                 </svg>
             </button>
 
+
+
             <NavLink to='/support'>
               <button type='button' className="text-black bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none font-medium md:block hidden">
                 Support
               </button>
             </NavLink>
+
 
 
 

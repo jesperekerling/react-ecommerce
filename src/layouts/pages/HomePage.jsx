@@ -45,6 +45,11 @@ function HomePage() {
 
       <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
       <ul>
+        <li>Logga in - Komma till en inloggad-sida.</li>
+        <li>Registrera - Komma till en inloggad-sida.</li>
+        <li>Skicka ORDER till API</li>
+        <li>ADMIN: lista ordrar</li>
+        <li>Roligare readme-fil</li>
         <li className='line-through'>Lista produkter</li>
         <li className='line-through'>Visa enksild produkt</li>
         <li className='line-through'>Navigering med react-router-dom</li>
@@ -53,11 +58,7 @@ function HomePage() {
         <li className='line-through'>Check-out-sida</li>
         <li className='line-through'>Logga in</li>
         <li className='line-through'>Registrera</li>
-        <li>Logga in - Komma till en inloggad-sida.</li>
-        <li>Registrera - Komma till en inloggad-sida.</li>
-        <li>EXTRA: Fixa Dropdown på categories i menyn</li>
-        <li>Skicka ORDER till API</li>
-        <li>ADMIN: lista ordrar</li>
+        <li className='line-through'>EXTRA: Fixa Dropdown på categories i menyn</li>
       </ul>
     </div>
 

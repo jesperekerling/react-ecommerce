@@ -1,17 +1,25 @@
 import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext'
 import { LoginFormSchema } from "../assets/js/LoginSchema";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LoginForm = () => {
-
-    
   const successMsg = () => toast("");
-
+  const navigate = useNavigate();
   const {login, token} = useAuth()
+
+  const handleLogin = async (formData) => {
+    const result = await login(formData);
+
+    if (result.success) {
+      navigate('/logged-in');
+    }
+    console.log('hej')
+  }
 
   const form = useFormik({
     initialValues: {
@@ -20,31 +28,7 @@ export const LoginForm = () => {
       confirmPassword: ''
     },
     validationSchema: LoginFormSchema,
-    onSubmit: login
-    /*
-    (values) => {
-      console.log(values)
-      fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-          confirmPassword: values.confirmPassword,
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data),
-        toast('Welcome! You are now logged in.'),
-        setToken(data.token)
-      })
-      .catch(error => console.error('Error:', error));
-    }
-    */
+    onSubmit: handleLogin // pass handleLogin here instead of login
   })
 
   console.log(form)
@@ -81,7 +65,9 @@ export const LoginForm = () => {
         <IoIosWarning />
       </div>} */}
 
-      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>Log in</button>
+      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>
+        Log in
+      </button>
 
       <ToastContainer
           position="top-center"

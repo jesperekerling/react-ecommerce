@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext()
@@ -47,7 +48,7 @@ const AuthContextProvider = ({ children }) => {
     }
   }
 
-  const login = async (formData) => {
+  const login = async (formData, history) => {
     try {
       const res = await fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
         method: 'POST',
@@ -58,16 +59,19 @@ const AuthContextProvider = ({ children }) => {
       })
 
 
-      console.log(res)
+      console.log(res) // Response från API
       const data = await res.json()
-      console.log(data)
-
+      console.log(data) // Login success status + token from
+      
       if(res.status !== 200) {
         throw new Error(data)
       }
-
-      setToken(data.token)
-      return { success: 'User Logged In' }
+      
+      if(res.status === 200) {
+        setToken(data.token)
+        return { success: true } // return an object with a success property
+      }
+    
       
       
     } catch (error) {

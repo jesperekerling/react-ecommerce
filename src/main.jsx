@@ -14,6 +14,7 @@ import NotFound from './app/public/NotFound.jsx'
 
 import Register from './app/auth/Register.jsx'
 import Login from './app/auth/Login.jsx'
+import LoggedInPage from './app/private/LoggedInPage.jsx'
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { path: 'categories', element: <Categories />},
       { path: 'support', element: <Support />},
       { path: 'login', element: <Login />},
+      { path: 'logged-in', element: <LoggedInPage />},
       { path: 'register', element: <Register />},
       { path: 'categories/:category', element: <ShowCategory />},     
       { path: '*', element: <NotFound />},
