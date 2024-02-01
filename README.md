@@ -1,6 +1,6 @@
 # React Ecommerce Mockup
 
-This is a ecommoerce mockup in React + Tailwind and some other extension.
+This is a ecommoerce mockup in React/Vite + Tailwind and some other extension.
 It is also a part of my JavaScript 2 course in my Front End Developer studies at KYH (kyh.se).
 This app is built connected to our teachers Vercel App. So the API might stop working in the future.
 
