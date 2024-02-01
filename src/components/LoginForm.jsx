@@ -50,6 +50,7 @@ export const LoginForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.email && form.touched.email && form.errors.email}
         onBlur={form.handleBlur}
+        className="w-full"
       />
       <FormInput
         label="Password"
@@ -60,9 +61,10 @@ export const LoginForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.password && form.touched.password && form.errors.password}
         onBlur={form.handleBlur}
+        className="w-full"
       />
       
-      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>
+      <button type="submit" className="mt-5 bg-blue-700 text-white hover:bg-blue-600 w-full" onSubmit={form.handleSubmit}>
         Log in
       </button>
 

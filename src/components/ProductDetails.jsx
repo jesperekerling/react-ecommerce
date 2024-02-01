@@ -47,13 +47,6 @@ function ProductDetails() {
                         </div>
                       )})
                     }
-                    {/* { // Shows available images from API
-                      product.images.map((image, index) => (
-                        <div className='product-images'>
-                          <img src={product.images[index]} alt={product.images} />
-                        </div>
-                      ))
-                    } */}
                   </div>
                 </div>
 

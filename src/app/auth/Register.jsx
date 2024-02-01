@@ -4,7 +4,7 @@ import { RegisterForm } from "../../components/RegisterForm"
 function Register() {
   return (
     
-    <div>
+    <div className='max-w-[400px] text-center mx-auto'>
         <h1>Register</h1>
         <RegisterForm />
     </div>

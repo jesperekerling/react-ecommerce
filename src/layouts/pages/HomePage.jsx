@@ -49,24 +49,6 @@ function HomePage() {
         : <ProductList products={products} />
       }
 
-      <h2 className='text-2xl text-blue-500 mt-10'>To do:</h2>
-      <ul>
-        <li className="line-through">Skicka ORDER till API</li>
-        <li>Roligare readme-fil</li>
-        <li className='line-through'>Gör logged-in så ingen kan se den som inte är inloggad.</li>
-        <li className='line-through'>ADMIN: lista ordrar</li>
-        <li className='line-through'>Logga in - Komma till en inloggad-sida.</li>
-        <li className='line-through'>Registrera - Komma till en inloggad-sida.</li>
-        <li className='line-through'>Lista produkter</li>
-        <li className='line-through'>Visa enksild produkt</li>
-        <li className='line-through'>Navigering med react-router-dom</li>
-        <li className='line-through'>Kategorier</li>
-        <li className='line-through'>Kontaktformulär</li>
-        <li className='line-through'>Check-out-sida</li>
-        <li className='line-through'>Logga in</li>
-        <li className='line-through'>Registrera</li>
-        <li className='line-through'>EXTRA: Fixa Dropdown på categories i menyn</li>
-      </ul>
     </div>
 
 

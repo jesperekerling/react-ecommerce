@@ -66,7 +66,7 @@ export const RegisterForm = () => {
       />
     
 
-      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600" onSubmit={form.handleSubmit}>Register</button>
+      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600 w-full mt-5" onSubmit={form.handleSubmit}>Register</button>
 
       <ToastContainer
           position="top-center"

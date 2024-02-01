@@ -40,7 +40,10 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
 
     clearCart();
 
-    navigate('/logged-in');
+    setTimeout(() => {
+      navigate('/logged-in', { state: { from: 'placeOrder' } });
+    }, 1000);
+
   };
 
     return (
