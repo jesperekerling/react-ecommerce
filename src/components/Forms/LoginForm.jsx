@@ -1,23 +1,27 @@
 import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
-import { useAuth } from '../contexts/authContext'
 import { useNavigate } from 'react-router-dom';
-import { RegisterFormSchema } from "../assets/js/RegisterSchema";
+import { useAuth } from '../../contexts/authContext'
+import { LoginFormSchema } from "../../assets/js/LoginSchema";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const successMsg = () => toast("");
   const navigate = useNavigate();
-  const { register } = useAuth()
+  const {login, token} = useAuth()
+  if (token) {
+    navigate('/logged-in');
+  }
 
-  const handleRegister = async (formData) => {
-    const result = await register(formData);
+  const handleLogin = async (formData) => {
+    const result = await login(formData);
+
     if (result.success) {
       navigate('/logged-in');
     }
+
   }
 
   const form = useFormik({
@@ -26,13 +30,16 @@ export const RegisterForm = () => {
       password: '',
       confirmPassword: ''
     },
-    validationSchema: RegisterFormSchema,
-    onSubmit: handleRegister // pass handleRegister here instead of register
+    validationSchema: LoginFormSchema,
+    onSubmit: handleLogin // pass handleLogin here instead of login
   })
 
   console.log(form)
 
+  
+
   return (
+    
     <form onSubmit={form.handleSubmit} className="reg-form" noValidate>
       <FormInput
         label="Email"
@@ -43,6 +50,7 @@ export const RegisterForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.email && form.touched.email && form.errors.email}
         onBlur={form.handleBlur}
+        className="w-full"
       />
       <FormInput
         label="Password"
@@ -53,28 +61,21 @@ export const RegisterForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.password && form.touched.password && form.errors.password}
         onBlur={form.handleBlur}
+        className="w-full"
       />
-      <FormInput
-        label="Confirm Password"  
-        id="confirmPassword"
-        name="confirmPassword"
-        type="password"
-        value={form.values.confirmPassword}
-        onChange={form.handleChange}
-        errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
-        onBlur={form.handleBlur}
-      />
-    
-
-      <button type="submit" className="bg-blue-700 text-white hover:bg-blue-600 w-full mt-5" onSubmit={form.handleSubmit}>Register</button>
+      
+      <button type="submit" className="mt-5 bg-blue-700 text-white hover:bg-blue-600 w-full" onSubmit={form.handleSubmit}>
+        Log in
+      </button>
 
       <ToastContainer
           position="top-center"
           autoClose={15000}
         />
-
+      
     </form>
+    
   )
 }
 
-export default RegisterForm
+export default LoginForm

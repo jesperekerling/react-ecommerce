@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import { Dropdown } from "./Dropdown";
-import { useCart } from "../contexts/cartContext";
-import { useAuth } from '../contexts/authContext'
+import { Dropdown } from "../Dropdown";
+import { useCart } from "../../contexts/cartContext";
+import { useAuth } from '../../contexts/authContext'
 
 
 export const Navbar = () => {

@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
-import { FormInput } from "../components/FormInput"
+import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
-import { SupportFormSchema } from "../assets/js/SupportSchema";
+import { SupportFormSchema } from "../../assets/js/SupportSchema";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
