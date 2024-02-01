@@ -52,3 +52,8 @@ Currently, two official plugins are available:
 # Heads up!!
 
 This is my first project in React. So Im not sure everything is safe and secure. So use this with care if anyone ever will use it :)
+
+
+# Disclaimer
+
+The product images are from a swedish ecommerce called Komplett (https://komplett.se/). Without permission, so this site is not intented for commercial use.
