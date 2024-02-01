@@ -26,7 +26,7 @@ Currently, two official plugins are available:
 
 - React (https://react.dev/)
 - Vite (https://vitejs.dev/)
-- Node JS ()
+- Node JS (https://nodejs.org/)
 - React DOM Router (https://reactrouter.com/)
 - Axios (https://github.com/axios/axios)
 - Tailwind (https://tailwindcss.com/)
@@ -41,9 +41,11 @@ Currently, two official plugins are available:
 
 # How to install
 
-- Download project from Git source
-- Run npm -i
-- Open console and write "npm run dev"
+- Intsall Node JS (https://nodejs.org/)
+- Install VS Code (https://code.visualstudio.com/)
+- Download project from Git source (https://github.com/jesperekerling/react-ecommerce.git)
+- Open Terminal and write "Run npm -i"
+- When finished, write "npm run dev"
 
 
 
