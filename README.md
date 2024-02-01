@@ -24,14 +24,16 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- React
-- React DOM Router
-- Axios
-- Tailwind
-- Yup
-- Formik
-- Toastify
-- Flowbite (Tailwind addon)
+- React (https://react.dev/)
+- Vite (https://vitejs.dev/)
+- Node JS ()
+- React DOM Router (https://reactrouter.com/)
+- Axios (https://github.com/axios/axios)
+- Tailwind (https://tailwindcss.com/)
+- Yup (https://www.npmjs.com/package/yup)
+- Formik (https://formik.org/)
+- Toastify (https://www.npmjs.com/package/react-toastify)
+- Flowbite (https://flowbite.com/)
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
