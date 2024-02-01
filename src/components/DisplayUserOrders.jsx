@@ -41,7 +41,9 @@ function DisplayUserOrders() {
         <div key={index} className='bg-gray-50 mt-10'>
           <div className='flex bg-blue-50 pt-2 pb-2 px-10'>
             <h3 className='flex-1 font-bold text-xl py-5 mt-2 text-left'>Order number: {index + 1}</h3>
-            <p className='px-10 pt-6 text-gray-500 text-xs font-semibold'>{order.createdAt ? format(new Date(order.createdAt), 'Pp') : 'Not available'}</p>
+            <p className='px-10 pt-6 text-gray-500 text-xs font-semibold'>
+              {order.createdAt ? format(new Date(order.createdAt), 'Pp') : 'Time not available'}
+            </p>
             <p className='align-middle mt-2'>
               <span className='text-sm text-gray-500'>Total Price</span>
               <span className='block mt-2 font-bold'>{order.totalPrice} kr</span>
