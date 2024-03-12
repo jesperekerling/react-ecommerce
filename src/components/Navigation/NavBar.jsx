@@ -3,7 +3,7 @@ import { Dropdown } from "../Dropdown";
 import { useCart } from "../../contexts/cartContext";
 import { useAuth } from '../../contexts/authContext'
 import imgUrl from '/src/assets/icons/computer.gif'
-document.getElementById('logo').src = imgUrl
+
 
 
 export const Navbar = () => {
