@@ -3,7 +3,6 @@ import { Dropdown } from "../Dropdown";
 import { useCart } from "../../contexts/cartContext";
 import { useAuth } from '../../contexts/authContext'
 import imgUrl from '/src/assets/icons/computer.gif'
-document.getElementById('logo').src = imgUrl
 
 
 export const Navbar = () => {
@@ -22,7 +21,7 @@ export const Navbar = () => {
 
 
           <NavLink to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
-                <img src='/src/assets/icons/computer.gif' alt='Flowbite Logo' width='50' height='50' id="logo" />
+                <img src={imgUrl} alt='Flowbite Logo' width='50' height='50' id="logo" />
                 <span className='self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white hover:opacity-50'>
                   Tech Shop</span>
           </NavLink>
