@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
+export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
 
   const navigate = useNavigate();
   const { token } = useAuth();
