@@ -71,7 +71,7 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
           <small className="text-gray-600">Inkl. vat</small>
         </div>
         <div>
-          { isCheckoutPage && token && (
+          { isCheckOutPage && token && (
             <>
               <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg transition-colors mr-4">
                 Clear cart
@@ -81,7 +81,7 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
               </button>
             </>
           )}
-          { !isCheckoutPage && (
+          { !isCheckOutPage && (
             <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-white">
               Checkout
             </Link>
