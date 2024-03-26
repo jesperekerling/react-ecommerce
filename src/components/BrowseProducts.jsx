@@ -22,8 +22,8 @@ const Fetch = () => {
             <div className='mx-3 my-8' id={product._id}>
                 <img src={product.images[0]} alt={product.name} title={product.name} width={300} className='text-center mx-auto mb-3 hover:opacity-50' />
                 <p className='font-bold text-lg'>{product.name}</p>
-                <p className='text-gray-500 text-sm mb-3'>{product.category}</p>
-                <p className='text-blue-700 font-bold text-md mt-2'>{product.price} kr</p>
+                <p className='text-gray-500 dark:text-gray-300 text-sm mb-3'>{product.category}</p>
+                <p className='text-blue-700 dark:text-blue-300 font-bold text-md mt-2'>{product.price} kr</p>
             </div>
         </Link>
       ))}

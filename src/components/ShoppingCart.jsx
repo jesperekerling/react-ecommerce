@@ -54,7 +54,7 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
           <div className="p-2 text-center">
             <p>Your cart is empty..</p>
             <Link to='/products'>
-              <button className="py-4 bg-blue-100 my-5 px-8 font-bold text-sm">
+              <button className="py-4 bg-blue-100 my-5 px-8 font-bold text-sm text-black">
                 Browse products to add
               </button>
             </Link>
@@ -67,7 +67,7 @@ export const ShoppingCart = ({ isCheckoutPage, setIsOpen }) => {
       <hr className="border-gray-400" />
       <div className="flex justify-between items-center p-2 mt-3">
         <div>
-          <p>Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
+          <p className="text-black">Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
           <small className="text-gray-600">Inkl. vat</small>
         </div>
         <div>

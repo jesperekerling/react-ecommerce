@@ -28,7 +28,7 @@ const Categories = () => {
       {categories.map((category) => (
         <Link to={`/categories/${category.category}`} className="category" key={category._id}>
           <div className='mx-3 my-8 border-white rounded-lg' id={category._id}>
-            <img src={category.images[0]} alt={category.name} title={category.name} width={300} className='text-center mx-auto mb-3 hover:opacity-50' />
+            <img src={category.images[0]} alt={category.name} title={category.name} width={300} className='text-center mx-auto mb-3 hover:opacity-50 rounded-lg' />
             <p className='lg:text-lg text-medium mb-3 capitalize font-bold'>{category.category}</p>
           </div>
         </Link>

@@ -70,12 +70,12 @@ function ProductDetailsPage() {
         </div>
       </div>
       <div className="md:w-2/5 pl-6">
-        <p className='text-gray-500 text-sm mb-3'><Link to={`/categories/${product.category}`} className="capitalize">{ product?.category}</Link></p>
+        <p className='text-gray-500 text-sm mb-3 dark:text-white'><Link to={`/categories/${product.category}`} className="capitalize dark:text-white">{ product?.category}</Link></p>
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
-        <p className='text-blue-700 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
-        <p className="mb-10 text-gray-500 text-sm text-left">{product.description}</p>
-        <button onClick={handleClick} className="flex justify-center items-center bg-blue-800 text-white my-6 py-4 px-10 hover:bg-black w-full">
-          <svg className="w-6 h-6 text-white dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <p className='text-blue-700 dark:text-blue-300 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
+        <p className="mb-10 text-gray-500 text-sm text-left dark:text-white">{product.description}</p>
+        <button onClick={handleClick} className="flex justify-center items-center bg-blue-800 dark:bg-black text-white my-6 py-4 px-10 hover:bg-black w-full">
+          <svg className="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.3L19 7H7.3"/>
           </svg>
           Add To Cart
