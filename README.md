@@ -17,6 +17,12 @@ In this project we are building a ecommerce website with these features:
 - Logged in Page is restricted to only logged in user
 
 
+# Live Demo
+
+Visit https://ecommerce.ekerling.com/ for a live demo.
+
+
+
 
 # Technologies
 
