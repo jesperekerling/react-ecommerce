@@ -5,7 +5,7 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch('https://js2-ecommerce-api.vercel.app/api/products')
+    fetch('https://ecommerce-api.ekerling.com/api/products')
       .then((res) => {
         return res.json();
       })

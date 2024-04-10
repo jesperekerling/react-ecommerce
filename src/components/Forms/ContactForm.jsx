@@ -20,7 +20,7 @@ export const ContactForm = () => {
     validationSchema: SupportFormSchema,
     onSubmit: (values) => {
       console.log(values)
-      fetch('https://js2-ecommerce-api.vercel.app/api/messages', {
+      fetch('https://ecommerce-api.ekerling.com/api/message', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

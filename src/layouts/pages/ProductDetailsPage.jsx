@@ -28,7 +28,7 @@ function ProductDetailsPage() {
     const getProduct = async () => {
       setLoading(true)
       try {
-        const res = await axios.get(`https://js2-ecommerce-api.vercel.app/api/products/${productId}`)
+        const res = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productId}`)
 
         setProduct(res.data)
         setLoading(false)

@@ -6,7 +6,7 @@ const ShowCategory = () => {
   const { category } = useParams(); // Get category from route parameters
 
   useEffect(() => {
-    fetch('https://js2-ecommerce-api.vercel.app/api/products')
+    fetch('https://ecommerce-api.ekerling.com/api/products')
       .then((res) => {
         return res.json();
       })
@@ -59,7 +59,7 @@ const ShowCategory = () => {
         {products.map((product) => (
         <Link to={`/products/${product._id}`} className="product" key={product._id}>
         <div className='mx-3 my-8 border-white rounded-lg' id={product._id}>
-            <img src={product.images[0]} alt={product.name} title={product.name} width={300} className='text-center mx-auto mb-3 hover:opacity-50' />
+            <img src={product.images[0]} alt={product.name} title={product.name} width={300} height={225} className='text-center mx-auto mb-3 hover:opacity-50' />
             <p className='font-bold lg:text-lg md:text-medium text-sm'>{product.name}</p>
             <p className='text-blue-700 dark:text-blue-200 font-bold text-md mt-2'>{product.price} kr</p>
         </div>
