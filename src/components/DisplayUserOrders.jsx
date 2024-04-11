@@ -8,12 +8,21 @@ const DisplayUserOrders = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders');
+      const token = 'your_token'; // replace 'your_token' with the actual token
+      const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const ordersWithProducts = await Promise.all(
         response.data.map(async (order) => {
           const products = await Promise.all(
             order.products.map(async (productId) => {
-              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productId}`);
+              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productId}`, {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              });
               return productResponse.data;
             })
           );
