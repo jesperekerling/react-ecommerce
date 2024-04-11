@@ -19,11 +19,8 @@ const DisplayUserOrders = () => {
         response.data.map(async (order) => {
           const products = await Promise.all(
             order.products.map(async (productItem) => {
-              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$id}`, {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              });
+              // Removed the Authorization header from this request
+              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$id}`);
               return { ...productResponse.data, quantity: productItem.quantity };
             })
           );
@@ -33,7 +30,6 @@ const DisplayUserOrders = () => {
       setOrders(ordersWithProducts);
       setIsLoading(false);
     };
-    fetchOrders();
   }, []);
 
   if (isLoading) {
