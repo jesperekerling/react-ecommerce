@@ -3,9 +3,9 @@ import { FormInput } from "./FormInput"
 import { IoIosWarning } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/authContext'
-import { LoginFormSchema } from "../../assets/js/LoginSchema";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from 'axios';
 
 export const LoginForm = () => {
   const successMsg = () => toast("");
@@ -16,13 +16,17 @@ export const LoginForm = () => {
   }
 
   const handleLogin = async (formData) => {
-    const result = await login(formData);
-
-    if (result.success) {
-      console.log('Token:', result.token);
-      navigate('/logged-in');
+    try {
+      const response = await axios.post('https://ecommerce-api.ekerling.com/api/login', formData);
+  
+      if (response.data.success) {
+        console.log('Token:', response.data.token);
+        localStorage.setItem('token', response.data.token); // Save the token in local storage
+        navigate('/logged-in');
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
     }
-
   }
 
   const form = useFormik({
