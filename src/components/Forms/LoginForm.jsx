@@ -19,6 +19,7 @@ export const LoginForm = () => {
     const result = await login(formData);
 
     if (result.success) {
+      console.log('Token:', result.token);
       navigate('/logged-in');
     }
 
@@ -32,7 +33,7 @@ export const LoginForm = () => {
     onSubmit: handleLogin
   })
 
-  console.log(form)
+//  console.log(form)
 
   
 
