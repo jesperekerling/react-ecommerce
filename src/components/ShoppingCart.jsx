@@ -20,7 +20,12 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify({ ...orderData, userId })
+      body: JSON.stringify({
+        products: cart.map(item => ({
+          productId: item.product._id,
+          quantity: item.quantity
+        }))
+      })
     });
 
     if (!response.ok) {
