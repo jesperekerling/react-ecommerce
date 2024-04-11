@@ -16,17 +16,24 @@ export const LoginForm = () => {
   }
 
   const handleLogin = async (formData) => {
-    console.log('Form submitted', formData);
     try {
-      const response = await axios.post('https://ecommerce-api.ekerling.com/api/login', formData, {
+      const response = await fetch('https://ecommerce-api.ekerling.com/api/login', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify(formData)
       });
   
-      if (response.data.token) {
-        console.log('Token:', response.data.token);
-        localStorage.setItem('token', response.data.token); // Save the token in local storage
+      if (!response.ok) {
+        throw new Error('Login failed');
+      }
+  
+      const data = await response.json();
+  
+      if (data.token) {
+        console.log('Token:', data.token);
+        localStorage.setItem('token', data.token); // Save the token in local storage
         navigate('/logged-in');
       }
     } catch (error) {
