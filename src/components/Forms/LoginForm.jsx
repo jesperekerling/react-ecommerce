@@ -27,11 +27,9 @@ export const LoginForm = () => {
   const form = useFormik({
     initialValues: {
       email: '',
-      password: '',
-      confirmPassword: ''
+      password: ''
     },
-    validationSchema: LoginFormSchema,
-    onSubmit: handleLogin // pass handleLogin here instead of login
+    onSubmit: handleLogin
   })
 
   console.log(form)
