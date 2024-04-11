@@ -60,6 +60,7 @@ const AuthContextProvider = ({ children }) => {
       })
   
       const data = await res.json()
+      console.log(data) // log the API response to check its structure
   
       if(res.status !== 200) {
         throw new Error(data)
@@ -68,7 +69,7 @@ const AuthContextProvider = ({ children }) => {
       if(res.status === 200) {
         setToken(data.token)
         // Save user id in local storage
-        localStorage.setItem('userId', data.id)
+        localStorage.setItem('user', data.user)
         return { success: true } // return an object with a success property
       }
       
