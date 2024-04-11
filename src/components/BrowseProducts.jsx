@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const Fetch = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('https://js2-ecommerce-api.vercel.app/api/products')
+    fetch('https://ecommerce-api.ekerling.com/api/products')
       .then((res) => {
         return res.json();
       })
