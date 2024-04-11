@@ -58,7 +58,7 @@ function ProductDetailsPage() {
 
   return (
     <div className="flex">
-      <div className="md:w-3/5 mb-8">
+      <div className="md:w-3/5 sm:w-full mb-8">
         <img src={product.images[activeImg]} alt="product image" className="rounded-lg" />
         <div className="flex gap-2 mt-2">
           {product.images.map((image, index) => (
