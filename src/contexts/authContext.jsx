@@ -80,7 +80,7 @@ const AuthContextProvider = ({ children }) => {
   }
 
   const logout = () => {
-    localStorage.removeItem('accesstoken')
+    localStorage.removeItem('token')
     setToken(null)
   }
 
