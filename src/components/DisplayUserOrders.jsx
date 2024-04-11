@@ -1,39 +1,38 @@
-import { useAuth } from '../contexts/authContext'
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 import { format } from 'date-fns';
 
-
-function DisplayUserOrders() {
-  
-  const { token } = useAuth();
+const DisplayUserOrders = () => {
   const [orders, setOrders] = useState([]);
-  const location = useLocation();
-
-  const sortedOrders = [...orders].sort((a, b) => b.orderNumber - a.orderNumber);
-
-
-  const justPlacedOrder = location.state?.from === 'placeOrder';
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://ecommerce-api.ekerling.com/api/orders', {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-    .then(response => response.json())
-    .then(data => setOrders(data))
-    .catch(error => console.error('Error:', error));
-  }, [token]);
+    const fetchOrders = async () => {
+      const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders');
+      const ordersWithProducts = await Promise.all(
+        response.data.map(async (order) => {
+          const products = await Promise.all(
+            order.products.map(async (productId) => {
+              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productId}`);
+              return productResponse.data;
+            })
+          );
+          return { ...order, products };
+        })
+      );
+      setOrders(ordersWithProducts);
+      setIsLoading(false);
+    };
+    fetchOrders();
+  }, []);
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
-
-
-  
   return (
     <div>
-      {justPlacedOrder && <p className='bg-blue-800 text-white p-10 rounded-lg font-semibold'>Thank you for your order. Have a excellent day!</p>}
-      {sortedOrders.map((order, index) => (
+      {orders.map((order, index) => (
         <div key={index} className='bg-gray-50 mt-10'>
           <div className='flex bg-blue-50 pt-2 pb-2 px-10'>
             <h3 className='flex-1 font-bold text-xl py-5 mt-2 text-left'>Order number: {index + 1}</h3>
@@ -62,6 +61,6 @@ function DisplayUserOrders() {
       ))}
     </div>
   );
-}
+};
 
 export default DisplayUserOrders;
