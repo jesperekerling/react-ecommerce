@@ -14,7 +14,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   const { cart, totalPrice, clearCart } = useCart()
 
   const placeOrder = async () => {
-    const response = await fetch('https://js2-ecommerce-api.vercel.app/api/orders', {
+    const response = await fetch('https://ecommerce-api.ekerling.com/api/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
