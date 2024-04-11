@@ -58,22 +58,19 @@ const AuthContextProvider = ({ children }) => {
         },
         body: JSON.stringify(formData)
       })
-
-
-      console.log(res) // Response från API
+  
       const data = await res.json()
-      console.log(data) // Login success status + token from
-      
+  
       if(res.status !== 200) {
         throw new Error(data)
       }
       
       if(res.status === 200) {
         setToken(data.token)
+        // Save user id in local storage
+        localStorage.setItem('userId', data.id)
         return { success: true } // return an object with a success property
       }
-    
-      
       
     } catch (error) {
       return { error: error.message }
