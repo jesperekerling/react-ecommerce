@@ -23,7 +23,7 @@ const AuthContextProvider = ({ children }) => {
 
   const register = async (formData) => {
     try {
-      const res = await fetch('https://js2-ecommerce-api.vercel.app/api/auth/register', {
+      const res = await fetch('https://ecommerce-api.ekerling.com/api/register', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
@@ -50,7 +50,7 @@ const AuthContextProvider = ({ children }) => {
 
   const login = async (formData, history) => {
     try {
-      const res = await fetch('https://js2-ecommerce-api.vercel.app/api/auth/login', {
+      const res = await fetch('https://ecommerce-api.ekerling.com/api/login', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'

@@ -53,7 +53,6 @@ export const RegisterForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.password && form.touched.password && form.errors.password}
         onBlur={form.handleBlur}
-        autoComplete="new-password"
       />
       <FormInput
         label="Confirm Password"  
@@ -64,7 +63,6 @@ export const RegisterForm = () => {
         onChange={form.handleChange}
         errorMsg={form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}
         onBlur={form.handleBlur}
-        autoComplete="new-password"
       />
     
 
