@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
+import AuthContext from '../contexts/authContext'; 
 
 const DisplayUserOrders = () => {
   const [orders, setOrders] = useState([]);
