@@ -1,11 +1,9 @@
 import { useFormik } from "formik";
 import { FormInput } from "./FormInput"
-import { IoIosWarning } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/authContext'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from 'axios';
 
 export const LoginForm = () => {
   const successMsg = () => toast("");

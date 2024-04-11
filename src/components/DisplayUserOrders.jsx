@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { format } from 'date-fns';
+import AuthContext from '../contexts/authContext'; 
 
 const DisplayUserOrders = () => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { token } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchOrders = async () => {
       setIsLoading(true);
       try {
-        const token = localStorage.getItem('token');
         if (!token) {
-          throw new Error('No token found in local storage');
+          throw new Error('No token found in context');
         }
   
         const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders', {
@@ -42,7 +43,7 @@ const DisplayUserOrders = () => {
     };
   
     fetchOrders();
-  }, []);
+  }, [token]);
 
   if (isLoading) {
     return <div>Loading...</div>;
