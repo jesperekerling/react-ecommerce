@@ -18,7 +18,11 @@ export const LoginForm = () => {
   const handleLogin = async (formData) => {
     console.log('Form submitted', formData);
     try {
-      const response = await axios.post('https://ecommerce-api.ekerling.com/api/login', formData);
+      const response = await axios.post('https://ecommerce-api.ekerling.com/api/login', formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
   
       if (response.data.success) {
         console.log('Token:', response.data.token);
