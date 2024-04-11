@@ -16,7 +16,7 @@ function DisplayUserOrders() {
   const justPlacedOrder = location.state?.from === 'placeOrder';
 
   useEffect(() => {
-    fetch('https://js2-ecommerce-api.vercel.app/api/orders', {
+    fetch('https://ecommerce-api.ekerling.com/api/orders', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
