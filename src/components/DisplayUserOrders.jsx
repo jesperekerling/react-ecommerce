@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
-import { format } from 'date-fns';
-import AuthContext from '../contexts/authContext'; 
+import { format } from 'date-fns'; 
+import { useAuth } from '../contexts/authContext';
 
 const DisplayUserOrders = () => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { token } = useContext(AuthContext);
+  const { token } = useAuth();
 
   useEffect(() => {
     const fetchOrders = async () => {
