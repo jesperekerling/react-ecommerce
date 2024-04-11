@@ -8,35 +8,40 @@ const DisplayUserOrders = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
+      setIsLoading(true);
       try {
         const token = localStorage.getItem('token');
-        console.log('Token:', token); // Log the token
+        if (!token) {
+          throw new Error('No token found in local storage');
+        }
+  
         const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log('Orders:', response.data); // Log the orders
+  
         const ordersWithProducts = await Promise.all(
           response.data.map(async (order) => {
             const products = await Promise.all(
               order.products.map(async (productItem) => {
                 const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$id}`);
-                console.log('Product:', productResponse.data); // Log the product
                 return { ...productResponse.data, quantity: productItem.quantity };
               })
             );
             return { ...order, products };
           })
         );
-        console.log('Orders with products:', ordersWithProducts); // Log the orders with products
+  
         setOrders(ordersWithProducts);
-        setIsLoading(false);
       } catch (error) {
-        console.error('An error occurred:', error); // Log the error
+        console.error('An error occurred:', error);
+      } finally {
         setIsLoading(false);
       }
     };
+  
+    fetchOrders();
   }, []);
 
   if (isLoading) {
