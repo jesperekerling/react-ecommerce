@@ -10,7 +10,7 @@ const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     if(token) return
 
-    const localToken = localStorage.getItem('accesstoken')
+    const localToken = localStorage.getItem('token')
 
     if(localToken !== null) {
       setToken(localToken)
@@ -18,7 +18,7 @@ const AuthContextProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    if(token) localStorage.setItem('accesstoken', token)
+    if(token) localStorage.setItem('token', token)
   }, [token])
 
   const register = async (formData) => {
