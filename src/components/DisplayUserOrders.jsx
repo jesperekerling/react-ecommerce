@@ -8,7 +8,7 @@ const DisplayUserOrders = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const token = 'your_token'; // replace 'your_token' with the actual token
+      const token = localStorage.getItem('accesstoken');
       const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders', {
         headers: {
           Authorization: `Bearer ${token}`,
