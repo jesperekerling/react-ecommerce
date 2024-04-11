@@ -9,6 +9,7 @@ const Providers = ({ children }) => {
       <Provider store={store} >
         <AuthContextProvider>
           <CartContextProvider>
+              <DisplayUserOrders />
               { children }
           </CartContextProvider>
         </AuthContextProvider>
