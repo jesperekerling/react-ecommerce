@@ -24,7 +24,7 @@ export const LoginForm = () => {
         }
       });
   
-      if (response.data.success) {
+      if (response.data.token) {
         console.log('Token:', response.data.token);
         localStorage.setItem('token', response.data.token); // Save the token in local storage
         navigate('/logged-in');
