@@ -7,7 +7,7 @@ const Providers = ({ children }) => {
   return (
     <>
       <Provider store={store} >
-        <AuthContextProvider value={{ authState, login }}>
+        <AuthContextProvider>
           <CartContextProvider>
               { children }
           </CartContextProvider>
