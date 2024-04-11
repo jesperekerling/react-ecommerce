@@ -17,13 +17,13 @@ const DisplayUserOrders = () => {
       const ordersWithProducts = await Promise.all(
         response.data.map(async (order) => {
           const products = await Promise.all(
-            order.products.map(async (productId) => {
-              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productId}`, {
+            order.products.map(async (productItem) => {
+              const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$oid}`, {
                 headers: {
                   Authorization: `Bearer ${token}`,
                 },
               });
-              return productResponse.data;
+              return { ...productResponse.data, quantity: productItem.quantity };
             })
           );
           return { ...order, products };
