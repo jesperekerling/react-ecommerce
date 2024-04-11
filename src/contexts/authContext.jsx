@@ -88,7 +88,8 @@ const AuthContextProvider = ({ children }) => {
     token,
     register,
     login,
-    logout
+    logout,
+    authState: {  }
   }
   return (
     <AuthContext.Provider value={value}>
