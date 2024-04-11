@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://js2-ecommerce-api.vercel.app/api/products'
+const BASE_URL = 'https://ecommerce-api.ekerling.com/api/products'
 
 const getAll = async () => {
   const res = await axios.get(BASE_URL)
