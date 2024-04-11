@@ -32,12 +32,8 @@ function DisplayUserOrders() {
   
   return (
     <div>
-      
       {justPlacedOrder && <p className='bg-blue-800 text-white p-10 rounded-lg font-semibold'>Thank you for your order. Have a excellent day!</p>}
-      
       {sortedOrders.map((order, index) => (
-
-        
         <div key={index} className='bg-gray-50 mt-10'>
           <div className='flex bg-blue-50 pt-2 pb-2 px-10'>
             <h3 className='flex-1 font-bold text-xl py-5 mt-2 text-left'>Order number: {index + 1}</h3>
@@ -51,10 +47,14 @@ function DisplayUserOrders() {
           </div>
           {order.products.map((product, i) => (
             <div key={i} className='flex justify-between items-center px-10 py-4'>
-              <img src={product.product.images[0]} alt={product.product.name} width={120} className='rounded-lg' />
+              {product.images && product.images[0] ? (
+                <img src={product.images[0]} alt={product.name} width={120} className='rounded-lg' />
+              ) : (
+                <p>No image available</p>
+              )}
               <h4 className='text-gray-500'>Product {i + 1}</h4>
-              <p>{product.product.name}</p>
-              <p className='text-gray-500'>{product.product.price} kr</p>
+              <p>{product.name ? product.name : 'No product name available'}</p>
+              <p className='text-gray-500'>{product.price ? product.price : 'No price available'} kr</p>
               <p className='text-gray-500'>Quantity: {product.quantity}</p>
             </div>
           ))}
