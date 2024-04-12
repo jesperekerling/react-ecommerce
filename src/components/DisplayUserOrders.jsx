@@ -73,17 +73,19 @@ const DisplayUserOrders = () => {
             </p>
           </div>
           {order.products.map((product, i) => (
-            <div key={i} className='flex justify-between items-center px-10 py-4'>
-              {product.images && product.images[0] ? (
-                <img src={product.images[0]} alt={product.name} width={120} className='rounded-lg' />
-              ) : (
-                <p>No image available</p>
-              )}
-              <h4 className='text-gray-500'>Product {i + 1}</h4>
-              <p>{product.name ? product.name : 'No product name available'}</p>
-              <p className='text-gray-500'>{product.price ? product.price : 'No price available'} kr</p>
-              <p className='text-gray-500'>Quantity: {product.quantity}</p>
-            </div>
+            product && (
+              <div key={i} className='flex justify-between items-center px-10 py-4'>
+                {product.images && product.images[0] ? (
+                  <img src={product.images[0]} alt={product.name} width={120} className='rounded-lg' />
+                ) : (
+                  <p>No image available</p>
+                )}
+                <h4 className='text-gray-500'>Product {i + 1}</h4>
+                <p>{product.name ? product.name : 'No product name available'}</p>
+                <p className='text-gray-500'>{product.price ? product.price : 'No price available'} kr</p>
+                <p className='text-gray-500'>Quantity: {product.quantity}</p>
+              </div>
+            )
           ))}
         </div>
       ))}
