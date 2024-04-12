@@ -47,7 +47,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   };
 
     return (
-    <div className="bg-white py-5 px-8">
+    <div className="bg-white dark:bg-gray-950 text-black dark:text-white py-5 px-8">
       <ToastContainer />
       <div>
         { cart.length < 1 && (
@@ -64,16 +64,16 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
           <CartItem key={`cart_${item.product._id}`} item={item} />
         ))}
       </div>
-      <hr className="border-gray-400" />
+      <hr className="border-gray-400 dark:border-e-gray-700" />
       <div className="flex justify-between items-center p-2 mt-3">
         <div>
-          <p className="text-black">Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
-          <small className="text-gray-600">Inkl. vat</small>
+          <p className="text-black dark:text-white">Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
+          <small className="text-gray-600 dark:text-gray-200">Inkl. vat</small>
         </div>
         <div>
           { isCheckOutPage && token && (
             <>
-              <button onClick={clearCart} className="bg-gray-200 text-black py-1.5 px-6 rounded-lg transition-colors mr-4">
+              <button onClick={clearCart} className="bg-gray-200 dark:bg-gray-800s text-black dark:text-white py-1.5 px-6 rounded-lg transition-colors mr-4">
                 Clear cart
               </button>
               <button onClick={placeOrder} className="bg-blue-700 text-white py-1.5 px-6 rounded-lg hover:bg-slate-900 transition-colors">
@@ -82,7 +82,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
             </>
           )}
           { !isCheckOutPage && (
-            <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-white">
+            <Link onClick={() => setIsOpen(false)} to="/checkout" className="bg-blue-700 font-semibold text-white py-3 px-6 rounded-lg hover:bg-blue-600 hover:text-white">
               Checkout
             </Link>
           )}
@@ -90,7 +90,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
       </div>
       
       {!token && (
-        <p className="p-5 bg-blue-100 mt-5 rounded-lg">
+        <p className="p-5 bg-blue-100 dark:bg-gray-900 mt-5 rounded-lg">
           Please <NavLink to="/register" className="font-bold">register</NavLink> or <NavLink to="/login" className="font-bold">log in</NavLink> to proceed with your checkout.
         </p>
       )}

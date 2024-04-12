@@ -5,7 +5,7 @@ function Register() {
   return (
     
     <div className='max-w-[400px] text-center mx-auto'>
-        <h1>Register</h1>
+        <h1 className='m-10'>Register</h1>
         <RegisterForm />
     </div>
     

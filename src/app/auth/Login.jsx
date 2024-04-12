@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Login() {
   return (
     <div className='max-w-[400px] text-center mx-auto'>
-        <h1 className='mb-10'>Login</h1>
+        <h1 className='m-10'>Login</h1>
         <p>Log in with email and password.</p>
         
         <LoginForm />

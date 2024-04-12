@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Link, NavLink } from "react-router-dom";
-import { addToCart } from "../../store/features/shoppingCart/shoppingCartSlice";
 import { useCart } from "../../contexts/cartContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -57,7 +56,7 @@ function ProductDetailsPage() {
   if(!product) return null
 
   return (
-    <div className="flex">
+    <div className="md:flex">
       <div className="md:w-3/5 sm:w-full mb-8">
         <img src={product.images[activeImg]} alt="product image" className="rounded-lg" />
         <div className="flex gap-2 mt-2">
@@ -69,7 +68,7 @@ function ProductDetailsPage() {
 
         </div>
       </div>
-      <div className="md:w-2/5 pl-6">
+      <div className="md:w-2/5 sm:p-10 md:p-16">
         <p className='text-gray-500 text-sm mb-3 dark:text-white'><Link to={`/categories/${product.category}`} className="capitalize dark:text-white">{ product?.category}</Link></p>
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
         <p className='text-blue-700 dark:text-blue-300 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>

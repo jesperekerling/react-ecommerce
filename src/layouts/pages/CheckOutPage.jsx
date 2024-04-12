@@ -4,7 +4,7 @@ function CheckOutPage() {
   return (
     <div className="mt-5">
       <div className="rounded-lg overflow-hidden">
-        <h1>Shopping Cart</h1>
+        <h1 className="mt-5 mb-10">Shopping Cart</h1>
         <ShoppingCart isCheckOutPage />
       </div>
     </div>
