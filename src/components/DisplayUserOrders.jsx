@@ -61,8 +61,8 @@ const DisplayUserOrders = () => {
   return (
     <div>
       {orders.map((order, index) => (
-        <div key={index} className='bg-gray-50 mt-10'>
-          <div className='flex bg-blue-50 pt-2 pb-2 px-10'>
+        <div key={index} className='bg-gray-50 dark:bg-gray-800 mt-10'>
+          <div className='flex bg-blue-50 dark:bg-gray-800 pt-2 pb-2 px-10'>
             <h3 className='flex-1 font-bold text-xl py-5 mt-2 text-left'>Order number: {index + 1}</h3>
             <p className='px-10 pt-6 text-gray-500 text-xs font-semibold'>
               {order.createdAt ? format(new Date(order.createdAt), 'Pp') : 'Time not available'}
@@ -72,7 +72,7 @@ const DisplayUserOrders = () => {
               <span className='block mt-2 font-bold'>{order.totalPrice} kr</span>
             </p>
           </div>
-          {order.products.map((product, i) => (
+          {order.products && order.products.map((product, i) => (
             product && (
               <div key={i} className='flex justify-between items-center px-10 py-4'>
                 {product.images && product.images[0] ? (
@@ -82,8 +82,6 @@ const DisplayUserOrders = () => {
                 )}
                 <h4 className='text-gray-500'>Product {i + 1}</h4>
                 <p>{product.name ? product.name : 'No product name available'}</p>
-                <p className='text-gray-500'>{product.price ? product.price : 'No price available'} kr</p>
-                <p className='text-gray-500'>Quantity: {product.quantity}</p>
               </div>
             )
           ))}
