@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
     <header className="w-full mb-20">
-      <nav className="w-full bg-white dark:bg-gray-800 z-20 dark-bg-gray-900 fixed top-0 border-0 broder-gray-200 dark:border-gray-600 container">
+      <nav className="w-full bg-white dark:bg-slate-800 z-20 dark-bg-gray-900 fixed top-0 border-0 broder-gray-200 dark:border-gray-600 container">
 
         <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3'>
 
