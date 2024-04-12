@@ -89,6 +89,7 @@ const DisplayUserOrders = () => {
       ))}
     </div>
   );
+  
 };
 
 export default DisplayUserOrders;
