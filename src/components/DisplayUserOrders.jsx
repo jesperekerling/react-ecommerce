@@ -8,6 +8,9 @@ const DisplayUserOrders = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { token } = useAuth();
 
+  // Initialize the product cache outside of the useEffect hook
+  const productCache = {};
+
   useEffect(() => {
     const fetchOrders = async () => {
       setIsLoading(true);
@@ -27,25 +30,29 @@ const DisplayUserOrders = () => {
             const products = await Promise.all(
               order.products.map(async (productItem) => {
                 if (productItem.product) {
-                  const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$id}`);
-                  return { ...productResponse.data, quantity: productItem.quantity };
+                  // Check the cache before making a request
+                  if (!productCache[productItem.product.$id]) {
+                    const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem.product.$id}`);
+                    productCache[productItem.product.$id] = productResponse.data;
+                  }
+                  return { ...productCache[productItem.product.$id], quantity: productItem.quantity };
                 }
               })
             );
             return { ...order, products };
           })
         );
-  
         setOrders(ordersWithProducts);
+        setIsLoading(false);
       } catch (error) {
-        console.error('An error occurred:', error);
-      } finally {
+        console.error(error);
         setIsLoading(false);
       }
     };
-  
+
     fetchOrders();
   }, [token]);
+
 
   if (isLoading) {
     return <div>Loading...</div>;
