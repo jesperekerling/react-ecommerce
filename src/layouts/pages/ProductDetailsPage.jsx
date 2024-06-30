@@ -59,13 +59,12 @@ function ProductDetailsPage() {
     <div className="md:flex">
       <div className="md:w-3/5 sm:w-full mb-8">
         <img src={product.images[activeImg]} alt="product image" className="rounded-lg" />
-        <div className="flex gap-2 mt-2">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-2">
           {product.images.map((image, index) => (
-            <div key={index} onClick={() => setActiveImg(index)} className="cursor-pointer">
-              <img src={image} className="rounded-lg w-full" />
+            <div key={index} onClick={() => setActiveImg(index)} className={`cursor-pointer ${index >= 3 ? 'thumbnail hide-on-mobile' : ''}`}>
+              <img src={image} className="thumbnail rounded-lg w-full" />
             </div>
           ))}
-
         </div>
       </div>
       <div className="md:w-2/5 sm:p-10 md:p-16">
@@ -82,7 +81,7 @@ function ProductDetailsPage() {
         
       </div>
       <ToastContainer
-          position="top-center"
+          position="bottom-center"
           autoClose={15000}
         />
     </div>

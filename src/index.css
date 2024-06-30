@@ -87,3 +87,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+/* Ensure this is correctly placed in your CSS file and loaded correctly */
+@media (max-width: 768px) {
+  .thumbnail {
+    display: none;
+  }
+  .thumbnail:first-child, .thumbnail:nth-child(2), .thumbnail:nth-child(3) {
+    display: block;
+  }
+}

@@ -24,7 +24,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className='container grid grid-cols-4 mx-auto'>
+    <div className='container grid grid-cols-2 mx-auto md:grid-cols-2'>
       {categories.map((category) => (
         <Link to={`/categories/${category.category}`} className="category" key={category._id}>
           <div className='mx-3 my-8 border-white rounded-lg' id={category._id}>
