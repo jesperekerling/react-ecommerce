@@ -24,7 +24,7 @@ export const LoginForm = () => {
       });
   
       if (!response.ok) {
-        throw new Error('Login failed');
+        throw new Error('Login failed');      
       }
   
       const data = await response.json();
@@ -36,6 +36,7 @@ export const LoginForm = () => {
       }
     } catch (error) {
       console.error('An error occurred:', error);
+      toast.error("Login failed"); // Display toast message on login failure
     }
   }
 
@@ -82,8 +83,8 @@ export const LoginForm = () => {
       </button>
 
       <ToastContainer
-          position="top-center"
-          autoClose={15000}
+          position="top-right"
+          autoClose={5000}
         />
       
     </form>

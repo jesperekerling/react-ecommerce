@@ -67,7 +67,7 @@ function ProductDetailsPage() {
           ))}
         </div>
       </div>
-      <div className="md:w-2/5 sm:p-10 md:p-16">
+      <div className="md:w-2/5 sm:p-4 md:p-6">
         <p className='text-gray-500 text-sm mb-3 dark:text-white'><Link to={`/categories/${product.category}`} className="capitalize dark:text-white">{ product?.category}</Link></p>
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
         <p className='text-blue-700 dark:text-blue-300 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
@@ -81,7 +81,7 @@ function ProductDetailsPage() {
         
       </div>
       <ToastContainer
-          position="bottom-center"
+          position="bottom-right"
           autoClose={15000}
         />
     </div>

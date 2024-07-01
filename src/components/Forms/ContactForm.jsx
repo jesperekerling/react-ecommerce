@@ -88,8 +88,8 @@ export const ContactForm = () => {
       </button>
       
       <ToastContainer
-          position="top-center"
-          autoClose={15000}
+          position="bottom-center"
+          autoClose={5000}
         />
 
     </form>

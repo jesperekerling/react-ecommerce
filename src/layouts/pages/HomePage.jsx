@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from "../../store/features/products/productsSlice"
 import { ProductList } from "../../components/ProductList"
-import Categories from '../../app/public/Categories.jsx'
+import Categories from '../../components/Categories.jsx'
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/authContext.jsx';
 

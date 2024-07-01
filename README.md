@@ -1,8 +1,8 @@
 # React Ecommerce
 
-This is a ecommerce in React/Vite + Tailwind and some other extension.
+This is a ecommerce Front End in React/Tailwind/Vite. It works with my other Github project that is a Ecommerce API.
 It is also a part of my JavaScript 2 course in my Front End Developer studies at KYH (kyh.se).
-This app is connected to a API I have also built (check demo + documentation here: https://ecommerce-api.ekerling.com/ or Github: https://github.com/jesperekerling/ecommerce-api)
+This app is connected to the backend API which is a seperate project (check demo + documentation here: https://ecommerce-api.ekerling.com/ or Github: https://github.com/jesperekerling/ecommerce-api).
 
 In this project we are building a ecommerce website with these features:
 - Product listing

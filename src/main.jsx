@@ -7,7 +7,7 @@ import HomePage from './layouts/pages/HomePage.jsx'
 import ProductDetailsPage from './layouts/pages/ProductDetailsPage.jsx'
 import BrowseProducts from './app/public/BrowseProducts.jsx'
 import CheckOutPage from './layouts/pages/CheckOutPage.jsx'
-import Categories from './app/public/Categories.jsx'
+import BrowseCategories from './app/public/BrowseCategories.jsx'
 import ShowCategory from './components/ShowCategory.jsx'
 import Support from './app/public/Support.jsx'
 import NotFound from './app/public/NotFound.jsx'
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "products/:productId", element: <ProductDetailsPage /> },
       { path: "products", element: <BrowseProducts /> },
       { path: 'checkout', element: <CheckOutPage />},
-      { path: 'categories', element: <Categories />},
+      { path: 'categories', element: <BrowseCategories />},
       { path: 'support', element: <Support />},
       { path: 'login', element: <Login />},
       { path: 'logged-in', element: <LoggedInPage />},
