@@ -80,10 +80,7 @@ function ProductDetailsPage() {
         </button>
         
       </div>
-      <ToastContainer
-          position="bottom-right"
-          autoClose={15000}
-        />
+
     </div>
   )
 }
