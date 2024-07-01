@@ -15,7 +15,7 @@ function Footer() {
 
     
     <footer className='sm:p-3'>
-      <div className='bg-blue-950 dark:bg-black p-10 text-white dark:text-white mt-10'>
+      <div className='sm:rounded-lg bg-blue-950 dark:bg-black p-10 text-white dark:text-white mt-10'>
         <h2 className="text-center text-2xl font-bold mt-5 mb-10">
           Support
         </h2>
@@ -28,7 +28,9 @@ function Footer() {
           </button>
         </Link>
       </div>
-      <p className='p-10'>Tech Shop by <a href="https://ekerling.com/" target='_blank' className='font-bold text-blue-900 dark:text-blue-200'>ekerling.com</a></p>
+      <p className='p-10 text-sm text-gray-700 dark:text-white'>
+        <a href="https://github.com/jesperekerling/react-ecommerce" target='_blank'>React Ecommerce</a> by <a href="https://ekerling.com/" target='_blank' className='font-bold text-blue-900 dark:text-blue-200'>ekerling.com</a>
+      </p>
     </footer>
   )
 }

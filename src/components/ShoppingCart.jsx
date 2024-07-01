@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom"
 import { useCart } from "../contexts/cartContext"
 import { useAuth } from '../contexts/authContext';
 import { toast } from 'react-toastify';
-import { ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
@@ -47,9 +46,9 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   };
 
     return (
-    <div className="bg-white dark:bg-gray-950 text-black dark:text-white py-5 px-8">
-      <ToastContainer />
-      <div>
+    <div className="bg-white dark:bg-gray-950 text-black dark:text-white py-2 sm:py-3 px-3 sm:px-8">
+      
+      <div className="mb-5">
         { cart.length < 1 && (
           <div className="p-2 text-center">
             <p>Your cart is empty..</p>

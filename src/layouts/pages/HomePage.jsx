@@ -28,7 +28,7 @@ function HomePage() {
   return (
     <div className="container mx-auto mt-4">
 
-      <div className="p-5 bg-gray-100 rounded dark:bg-gray-800">
+      <div className="p-5 bg-gray-100 sm:rounded-lg dark:bg-gray-800 text-black dark:text-white">
         <h1 className='m-10 text-3xl'>Hey Customer!</h1>
         {!token && (
           <p className='mb-16'>

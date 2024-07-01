@@ -75,7 +75,7 @@ export const ContactForm = () => {
           value={form.values.message}
           onChange={form.handleChange}
           onBlur={form.handleBlur}
-          className="w-full"
+          className="w-full h-24"
         >
         </textarea>
         {form.errors.message && form.touched.message && (
