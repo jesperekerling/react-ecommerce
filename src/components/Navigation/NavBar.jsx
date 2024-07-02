@@ -22,7 +22,7 @@ export const Navbar = () => {
 
           <NavLink to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
                 <img src={imgUrl} alt='Shop Logo' width='50' height='50' id="logo" />
-                <span className='self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white hover:opacity-50'>
+                <span className='self-center text-xl font-semibold whitespace-nowrap text-black dark:text-white hover:opacity-50'>
                   Tech Shop</span>
           </NavLink>
 
