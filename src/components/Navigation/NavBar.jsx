@@ -17,7 +17,7 @@ export const Navbar = () => {
     <header className="w-full mb-20">
       <nav className="w-full bg-white dark:bg-slate-800 z-20 dark-bg-gray-900 fixed top-0 border-0 broder-gray-200 dark:border-gray-600 container">
 
-        <div className='flex flex-wrap items-center justify-between mx-auto p-3 mx-4 lg:mx-7'>
+        <div className='flex flex-wrap items-center justify-between p-3 mx-4 lg:mx-7'>
 
 
           <NavLink to='/' className='flex items-center space-x-3 rtl:space-x-reverse'>
