@@ -26,21 +26,21 @@ function HomePage() {
   )
 
   return (
-    <div className="mt-10">
+    <div className="mt-5">
 
-      <div className="p-5 bg-gray-100 sm:rounded-lg dark:bg-gray-800 text-black dark:text-white">
-        <h1 className='m-10 text-3xl'>Hey Customer!</h1>
+      <div className="p-5 mb-5 bg-gray-100 sm:rounded-lg dark:bg-gray-800 text-black dark:text-white">
+        <h1 className='m-5 text-xl font-semibold'>Hey Customer,</h1>
         {!token && (
-          <p className='mb-16'>
-            If you want to purchase. Please <Link to="register" className="font-bold">register</Link> or <Link to="login" className="font-bold">log in</Link>.
+          <p className='mb-8'>
+            To purchase items, please <Link to="register" className="font-bold">register</Link> or <Link to="login" className="font-bold">log in</Link>.
           </p>
          )}
       </div>
 
-        <h2 className="mt-8 mb-2 font-bold text-2xl">Categories</h2>
-        <Categories />
+      <h2 className="mt-10 mb-2 font-bold text-2xl">Categories</h2>
+      <Categories />
 
-        <h2 className='text-2xl font-bold mt-20 mb-10'>Products</h2>
+      <h2 className='text-2xl font-bold mt-20 mb-10'>Products</h2>
 
       {
         loading 
