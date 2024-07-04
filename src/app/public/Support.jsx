@@ -9,7 +9,7 @@ function Support() {
 
 
 
-        <h2 className="text-center text-2xl font-bold mb-10 bg-blue-950 p-10 text-white mt-10">
+        <h2 className="text-center sm:rounded-lg text-2xl font-bold mb-10 bg-blue-950 p-10 text-white mt-10">
           Customer Support
         </h2>
 

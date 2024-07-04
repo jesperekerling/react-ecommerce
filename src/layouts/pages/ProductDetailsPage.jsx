@@ -57,7 +57,7 @@ function ProductDetailsPage() {
 
   return (
     <div className="md:flex">
-      <div className="md:w-3/5 sm:w-full mb-8">
+      <div className="md:w-3/5 sm:w-full mb-8 sticky top-0">
         <img src={product.images[activeImg]} alt="product image" className="rounded-lg" />
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-2">
           {product.images.map((image, index) => (
@@ -67,7 +67,7 @@ function ProductDetailsPage() {
           ))}
         </div>
       </div>
-      <div className="md:w-2/5 sm:p-4 md:p-6">
+      <div className="md:w-2/5 sm:p-4 md:p-6 sticky top-0 place-content-center">
         <p className='text-gray-500 text-sm mb-3 dark:text-white'><Link to={`/categories/${product.category}`} className="capitalize dark:text-white">{ product?.category}</Link></p>
         <h1 className="text-3xl font-bold text-center mb-8">{ product.name }</h1>
         <p className='text-blue-700 dark:text-blue-300 font-bold text-md mt-2 text-xl mb-6'>{product.price} kr</p>
