@@ -17,6 +17,15 @@ ProductList.Skeleton = () => {
       <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
       <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
       <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+      <div className="bg-gray-300/50 rounded-lg animate-pulse aspect-square" />
+
     </div>
   )
 }

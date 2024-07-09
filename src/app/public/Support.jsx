@@ -7,17 +7,18 @@ function Support() {
       <div className=''>
 
 
-
-        <h2 className="text-center sm:rounded-lg text-2xl font-bold mb-10 bg-blue-950 p-10 text-white mt-10">
+<div className='bg-blue-950 mb-10 p-5 sm:rounded-lg'>
+        <h2 className="text-center text-2xl md:text-3xl font-bold  text-white my-10">
           Customer Support
         </h2>
 
-        <p className='mb-10 md:max-w-[600px] mx-auto text-lg'>
+        <p className='mb-10 md:max-w-[600px] mx-auto text-lg text-white'>
         Feel free to contact us with any concerns. Our dedicated team is here to assist you. Below, we've compiled frequently asked questions for your convenience.
         </p>
+        </div>
 
         <div className='bg-gray-50 md:rounded-lg px-10 pb-10'>
-          <h3 className='font-bold text-3xl py-10'>FAQ</h3>
+          <h3 className='font-bold text-xl md:text-3xl py-10'>FAQ</h3>
 
           <div className='md:max-w-[500px] mx-auto'>
 
@@ -56,7 +57,7 @@ function Support() {
 
 
         <div className='bg-blue-50 my-20 md:rounded-lg py-14'>
-          <h3 className='font-bold text-3xl pb-8'>Email Us</h3>
+          <h3 className='font-bold text-xl md:text-3xl pb-8'>Email Us</h3>
           <p className='mb-4'>We love feedback from our customers!</p>
           <div className='md:max-w-[500px] mx-auto'>
             <ContactForm />
