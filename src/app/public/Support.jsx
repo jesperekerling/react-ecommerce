@@ -23,31 +23,31 @@ function Support() {
           <div className='md:max-w-[500px] mx-auto'>
 
             <details className='py-4 bg-white rounded my-2'>
-              <summary className='font-semibold'>How do I return an item?</summary>
+              <summary className='font-semibold cursor-pointer'>How do I return an item?</summary>
               <p className='py-2 text-sm'>
                 You can return an item by contacting our customer support.
               </p>
             </details>
             <details className='py-4 bg-white rounded my-2'>
-              <summary className='font-semibold'>How do I track my order?</summary>
+              <summary className='font-semibold cursor-pointer'>How do I track my order?</summary>
               <p className='py-2 text-sm'>
                 You can track your order by logging in to your account.
               </p>
             </details>
             <details className='py-4 bg-white rounded my-2'>
-              <summary className='font-semibold'>How do I cancel my order?</summary>
+              <summary className='font-semibold cursor-pointer'>How do I cancel my order?</summary>
               <p className='py-2 text-sm'>
                 You can cancel your order by contacting our customer support.
               </p>
             </details>
             <details className='py-4 bg-white rounded my-2'>
-              <summary className='font-semibold'>How do I change my order?</summary>
+              <summary className='font-semibold cursor-pointer'>How do I change my order?</summary>
               <p className='py-2 text-sm'>
                 You can change your order by contacting our customer support.
               </p>
             </details>
             <details className='py-4 bg-white rounded my-2'>
-              <summary className='font-semibold'>How do I get a refund?</summary>
+              <summary className='font-semibold cursor-pointer'>How do I get a refund?</summary>
               <p className='py-2 text-sm'>
                 You can get a refund by contacting our customer support.
               </p>
