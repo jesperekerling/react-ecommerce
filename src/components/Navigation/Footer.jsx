@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
       )}
       <p className='p-10 text-sm text-gray-700 dark:text-white'>
-        <a href="https://github.com/jesperekerling/react-ecommerce" target='_blank' rel="noopener noreferrer">React Ecommerce</a> by <a href="https://ekerling.com/" target='_blank' className='font-bold text-blue-900 dark:text-blue-200' rel="noopener noreferrer">ekerling.com</a>
+        <a href="https://github.com/jesperekerling/react-ecommerce" target='_blank' rel="noopener noreferrer" className='hover:opacity-65'>React Ecommerce</a> by <a href="https://ekerling.com/" target='_blank' className='font-bold text-blue-900 dark:text-blue-200 hover:opacity-65' rel="noopener noreferrer">ekerling.com</a>
       </p>
     </footer>
   );
