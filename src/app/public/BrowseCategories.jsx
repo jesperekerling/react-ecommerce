@@ -4,8 +4,8 @@ import Categories from '../../components/Categories'
 
 function BrowseCategories() {
   return (
-    <div>
-      <h1 className='m-10'>Categories</h1>
+    <div className='min-h-96'>
+      <h1 className='m-10 text-2xl font-semibold'>Categories</h1>
       <Categories />
     </div>
   )

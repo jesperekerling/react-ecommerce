@@ -66,7 +66,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
       <hr className="border-gray-400 dark:border-e-gray-700" />
       <div className="flex justify-between items-center p-2 mt-3">
         <div>
-          <p className="text-black dark:text-white">Total Price: <span className="font-bold">{ totalPrice } kr</span></p>
+          <p className="text-black dark:text-white">Total Price: <span className="font-bold">{new Intl.NumberFormat('sv-SE').format(totalPrice)} kr</span></p>
           <small className="text-gray-600 dark:text-gray-200">Inkl. vat</small>
         </div>
         <div>

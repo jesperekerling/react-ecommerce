@@ -83,7 +83,7 @@ export const ContactForm = () => {
         )}
       </div>
 
-      <button type="submit" className="text-center mt-10 bg-blue-800 text-white">
+      <button type="submit" className="text-center mt-10 bg-blue-800 text-white dark:text-black dark:bg-blue-100 hover:bg-blue-600">
         Send Message
       </button>
       

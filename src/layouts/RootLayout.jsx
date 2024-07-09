@@ -11,14 +11,19 @@ function RootLayout() {
   return (
     
     <Providers>
-      <ToastContainer />
-        <Navbar />
-        <main className="p-3">
-          
-          <Outlet />
-          
-        </main>
-        <Footer />
+      <ToastContainer
+        stacked
+        position="bottom-center"
+        autoClose={3000}
+        theme="colored"
+       />
+      <Navbar />
+      <main className="p-3">
+        
+        <Outlet />
+        
+      </main>
+      <Footer />
     </Providers>
   )
 }
