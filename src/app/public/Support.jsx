@@ -2,7 +2,6 @@ import React from 'react'
 import ContactForm from '../../components/Forms/ContactForm'
 
 
-
 function Support() {
     return (
       <div className=''>
@@ -63,7 +62,9 @@ function Support() {
             <ContactForm />
           </div>
         </div>
+
       </div>
+
     )
   }
   export default Support
