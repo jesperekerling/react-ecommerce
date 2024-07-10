@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import { Dropdown } from "../Dropdown";
 import { useCart } from "../../contexts/cartContext";
 import { useAuth } from '../../contexts/authContext'
-import imgUrl from '/src/assets/icons/computer.gif'
 
 
 export const Navbar = () => {
