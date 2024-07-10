@@ -6,7 +6,7 @@ import { useAuth } from '../../contexts/authContext'
 
 export const Navbar = () => {
 
-  const {login, token, logout} = useAuth()
+  const { token, logout} = useAuth()
 
 
   // const { totalQuantity } = useSelector(state => state.shoppingCart)
