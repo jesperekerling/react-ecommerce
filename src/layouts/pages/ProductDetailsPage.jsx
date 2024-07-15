@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/cartContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,7 +39,7 @@ function ProductDetailsPage() {
     }
 
     getProduct()
-  }, [])
+  }, [productId])
 
   const handleClick = () => {
     // dispatch(addToCart(product))
@@ -62,7 +62,7 @@ function ProductDetailsPage() {
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 md:gap-4 my-2 sm:my-4 text-center">
           {product.images.map((image, index) => (
             <div key={index} onClick={() => setActiveImg(index)} className={`cursor-pointer ${index >= 3 ? 'thumbnail hide-on-mobile' : ''}`}>
-              <img src={image} className="thumbnail rounded-lg w-full" />
+              <img src={image} className="thumbnail rounded-lg w-full hover:opacity-75" />
             </div>
           ))}
         </div>
