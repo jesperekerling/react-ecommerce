@@ -19,16 +19,21 @@ const DisplayUserOrders = () => {
           throw new Error('No token found in context');
         }
     
-        const response = await axios.get('https://ecommerce-api.ekerling.com/api/orders', {
+        const response = await fetch('https://ecommerce-api.ekerling.com/api/orders', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
     
-        console.log('Orders response:', response.data);
+        if (!response.ok) {
+          throw new Error(`Error fetching orders: ${response.statusText}`);
+        }
+    
+        const ordersData = await response.json();
+        console.log('Orders response:', ordersData);
     
         const ordersWithProducts = await Promise.all(
-          response.data.map(async (order) => {
+          ordersData.map(async (order) => {
             const products = await Promise.all(
               order.products.map(async (productItem) => {
                 console.log('Product item:', productItem);
@@ -36,8 +41,12 @@ const DisplayUserOrders = () => {
                   // Check the cache before making a request
                   if (!productCache[productItem._id]) {
                     try {
-                      const productResponse = await axios.get(`https://ecommerce-api.ekerling.com/api/products/${productItem._id}`);
-                      productCache[productItem._id] = productResponse.data;
+                      const productResponse = await fetch(`https://ecommerce-api.ekerling.com/api/products/${productItem._id}`);
+                      if (!productResponse.ok) {
+                        throw new Error(`Error fetching product ${productItem._id}: ${productResponse.statusText}`);
+                      }
+                      const productData = await productResponse.json();
+                      productCache[productItem._id] = productData;
                     } catch (error) {
                       console.error(`Error fetching product ${productItem._id}:`, error);
                       return null; // Skip this product if it fails to fetch
@@ -58,7 +67,7 @@ const DisplayUserOrders = () => {
         setIsLoading(false);
       }
     };
-
+    
     fetchOrders();
   }, [token]);
 

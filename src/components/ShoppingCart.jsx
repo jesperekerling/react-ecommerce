@@ -13,6 +13,14 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   const { cart, totalPrice, clearCart } = useCart()
 
   const placeOrder = async () => {
+    const orderProducts = cart.map(item => ({
+      productId: item.product._id,
+      quantity: item.quantity
+    }));
+  
+    // Log the product IDs and quantities
+    console.log('Order products:', orderProducts);
+  
     const response = await fetch('https://ecommerce-api.ekerling.com/api/orders', {
       method: 'POST',
       headers: {
@@ -20,29 +28,26 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
         'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({
-        products: cart.map(item => ({
-          productId: item.product._id,
-          quantity: item.quantity
-        }))
+        products: orderProducts
       })
     });
-
+  
     if (!response.ok) {
-      <p>Errorrrrrr!!!</p>
+      console.error('Error placing order:', response.statusText);
+      return;
     }
-
+  
     // Displays answer from API in the console
     const responseData = await response.json();
     console.log(responseData);
-
+  
     toast.success("Thank you, your order has been placed!");
-
+  
     clearCart();
-
+  
     setTimeout(() => {
       navigate('/logged-in', { state: { from: 'placeOrder' } });
     }, 1000);
-
   };
 
     return (
