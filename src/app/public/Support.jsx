@@ -7,14 +7,14 @@ function Support() {
       <div className=''>
 
 
-<div className='bg-blue-950 mb-10 p-5 sm:rounded-lg'>
-        <h2 className="text-center text-2xl md:text-3xl font-bold  text-white my-10">
-          Customer Support
-        </h2>
+        <div className='bg-white mb-10 p-5 sm:rounded-lg text-left md:max-w-[600px] mx-auto'>
+          <h2 className="text-2xl md:text-3xl font-bold my-10">
+            Customer Support
+          </h2>
 
-        <p className='mb-10 md:max-w-[600px] mx-auto text-lg text-white'>
-        Feel free to contact us with any concerns. Our dedicated team is here to assist you. Below, we've compiled frequently asked questions for your convenience.
-        </p>
+          <p className='mb-10  text-lg'>
+          Feel free to contact us with any concerns. Our dedicated team is here to assist you. Below, we've compiled frequently asked questions for your convenience.
+          </p>
         </div>
 
         <div className='bg-gray-50 md:rounded-lg px-10 pb-10'>
