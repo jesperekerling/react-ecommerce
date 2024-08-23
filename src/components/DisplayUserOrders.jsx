@@ -24,9 +24,9 @@ const DisplayUserOrders = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-    
+        console.log("hej")
         if (!response.ok) {
-          throw new Error(`Error fetching orders: ${response.statusText}`);
+          throw new Error(`Error fetching orders: ${response.status}`);
         }
     
         const ordersData = await response.json();
