@@ -13,9 +13,9 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   const { cart, totalPrice, clearCart } = useCart()
 
   const placeOrder = async () => {
-    const orderProducts = cart.map(item => ({
-      productId: item.product._id,
-      quantity: item.quantity
+    const orderProducts = cart.map(products => ({
+      productId: products.product._id,
+      quantity: products.quantity
     }));
   
     // Log the product IDs and quantities
@@ -39,7 +39,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
   
     // Displays answer from API in the console
     const responseData = await response.json();
-    console.log(responseData);
+    console.log('Response data:', responseData);
   
     toast.success("Thank you, your order has been placed!");
   
