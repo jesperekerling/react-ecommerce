@@ -1,65 +1,51 @@
-import React, { useEffect, useState, useContext } from 'react';
-import axios from 'axios';
-import { format } from 'date-fns'; 
+import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/authContext';
+import { format } from 'date-fns';
 
 const DisplayUserOrders = () => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { token } = useAuth();
 
-  // Initialize the product cache outside of the useEffect hook
-  const productCache = {};
-
   useEffect(() => {
     const fetchOrders = async () => {
-      setIsLoading(true);
       try {
-        if (!token) {
-          throw new Error('No token found in context');
-        }
-    
         const response = await fetch('https://ecommerce-api.ekerling.com/api/orders', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log("hej")
+
+        // Log response status and headers
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+
         if (!response.ok) {
-          throw new Error(`Error fetching orders: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-    
-        const ordersData = await response.json();
-        console.log('Orders response:', ordersData);
-    
+
+        // Check if the response is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new Error('Response is not JSON');
+        }
+
+        const data = await response.json();
         const ordersWithProducts = await Promise.all(
-          ordersData.map(async (order) => {
+          data.map(async (order) => {
             const products = await Promise.all(
-              order.products.map(async (productItem) => {
-                console.log('Product item:', productItem);
-                if (productItem._id) {
-                  // Check the cache before making a request
-                  if (!productCache[productItem._id]) {
-                    try {
-                      const productResponse = await fetch(`https://ecommerce-api.ekerling.com/api/products/${productItem._id}`);
-                      if (!productResponse.ok) {
-                        throw new Error(`Error fetching product ${productItem._id}: ${productResponse.statusText}`);
-                      }
-                      const productData = await productResponse.json();
-                      productCache[productItem._id] = productData;
-                    } catch (error) {
-                      console.error(`Error fetching product ${productItem._id}:`, error);
-                      return null; // Skip this product if it fails to fetch
-                    }
-                  }
-                  return { ...productCache[productItem._id], quantity: productItem.quantity };
+              order.products.map(async (productId) => {
+                const productResponse = await fetch(`/api/products/${productId}`);
+                if (!productResponse.ok) {
+                  return null;
                 }
-                return null;
+                return await productResponse.json();
               })
             );
             return { ...order, products: products.filter(product => product !== null) };
           })
         );
+        console.log('Orders with products:', ordersWithProducts); // Log the orders with products
         setOrders(ordersWithProducts);
         setIsLoading(false);
       } catch (error) {
@@ -67,10 +53,9 @@ const DisplayUserOrders = () => {
         setIsLoading(false);
       }
     };
-    
+
     fetchOrders();
   }, [token]);
-
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -115,7 +100,6 @@ const DisplayUserOrders = () => {
       ))}
     </div>
   );
-  
 };
 
 export default DisplayUserOrders;

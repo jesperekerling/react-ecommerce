@@ -33,7 +33,7 @@ export const ShoppingCart = ({ isCheckOutPage, setIsOpen }) => {
     });
   
     if (!response.ok) {
-      console.error('Error placing order:', response.statusText);
+      console.error('Error placing order:', response.status);
       return;
     }
   
